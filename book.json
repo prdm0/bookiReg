@@ -1,0 +1,41 @@
+{
+  "plugins": [
+    "toolbar"
+    ],
+  "pluginsConfig": {
+    "toolbar": {
+      "buttons":
+        [
+          {
+            "label": "GitHub",
+            "icon": "fa fa-github",
+            "url": "https://github.com/",
+            "target": "_self"
+          },
+          {
+            "label": "Search page title on StackOverflow",
+            "icon": "fa fa-stack-overflow",
+            "url": "http://stackoverflow.com/search?q={{title}}"
+          },
+          {
+            "label": "Share link on Facebook",
+            "icon": "fa fa-facebook",
+            "url": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}"
+          },
+          {
+            "label": "Share page title and link on Twitter",
+            "icon": "fa fa-twitter",
+            "position":"left",
+            "url": "http://twitter.com/home?status={{title}}%20{{url}}"
+          },
+          {
+            "label": "Edit page on github",
+            "icon": "fa fa-pencil-square-o",
+            "position" : "left",
+            "url": "https://github.com/org/repo/edit/master/{{filepath_lang}}"
+          }
+          
+          ]
+    }
+  }
+}
