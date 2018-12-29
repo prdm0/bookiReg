@@ -3,8 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       collapse: section
-    edit:
-      link: https://github.com/prdm0/bookiReg/tree/master/docs/%s
+    edit: https://github.com/prdm0/bookiReg/edit/master/docs/%s
     sharing: 
       github: yes
     download: ["pdf", "epub", "mobi"]
