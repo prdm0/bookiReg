@@ -3,3 +3,5 @@ rmd_files: [
   "Introduction.Rmd"
 ]
 
+output_dir: "docs"
+
