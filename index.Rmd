@@ -4,7 +4,10 @@ title: "iRegression: An R Package for Regression Models with Interval Variables"
 author: "Eufrasio de A. Lima Neto and Pedro Rafael D. Marinho"
 description: "Escrever um prefácio"
 date: "`r Sys.Date()`"
-output: bookdown::gitbook
+output: 
+  bookdown::gitbook
+  bookdown::epub_book 
+  bookdown::pdf_book
 bibliography: [iReg.bib]
 biblio-style: apalike
 link-citations: yes
