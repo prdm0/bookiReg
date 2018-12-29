@@ -18,5 +18,5 @@ In real problems, it is usual to have the available data presented as intervals.
 **by GitHub**: `devtools::install_github(repo = "prdm0/iRegression", ref =  "v1.2")` <br><br>
 
 **CRAN Project**: https://CRAN.R-project.org/package=iRegression. <br><br>
-**Site with example and documentation**: https://prdm0.github.io/iRegression/.
+**Book Site**: https://prdm0.github.io/bookiReg/.
 
