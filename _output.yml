@@ -4,7 +4,7 @@ bookdown::gitbook:
     toc:
       collapse: section
     edit:
-      link: https://github.com/prdm0/bookiReg/issues
+      link: https://github.com/prdm0/bookiReg/edit/master/%s
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
