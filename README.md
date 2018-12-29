@@ -1,4 +1,4 @@
-bookiReg <img src="https://raw.githubusercontent.com/prdm0/tempfiles/master/logo_iRegession.png" align="right" alt="" width="120" />
+iRegression package book <img src="https://raw.githubusercontent.com/prdm0/tempfiles/master/logo_iRegession.png" align="right" alt="" width="120" />
 ===================================================================================================================================
 **(iRegression package book)**
 
