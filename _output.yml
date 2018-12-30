@@ -6,11 +6,20 @@ bookdown::gitbook:
     edit: https://github.com/prdm0/bookiReg/edit/master/%s
     sharing: 
       github: yes
-    download: ["pdf", "epub", "mobi"]
-bookdown::pdf_book:
-  includes:
-  in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-bookdown::epub_book: default
-
+    toolbar:
+      position: fixed
+#    download: ["pdf", "epub", "mobi"]
+#bookdown::pdf_book:
+#  base_format: rmarkdown::pdf_book
+#  includes:
+#    in_header: preamble.tex
+#  latex_engine: xelatex
+#  citation_package: natbib
+#  keep_tex: yes
+#bookdown::epub_book: default
+#bookdown::pdf_document2:
+#  includes:
+#    in_header: preamble.tex
+#  latex_engine: xelatex
+#  citation_package: natbib
+#  keep_tex: yes
