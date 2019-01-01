@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="introduction.html">
-<link rel="next" href="references.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -68,8 +68,8 @@
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html"><i class="fa fa-check"></i>Bivariate symbolic regression model (BSRM)</a><ul>
 <li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#preliminaries"><i class="fa fa-check"></i>Preliminaries</a></li>
+<li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#the-model"><i class="fa fa-check"></i>The model</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -117,14 +117,141 @@ equations of natural exponential families and presents a direct relation with th
 \end{equation}\]</span></p>
 <p>The use of the bivariate exponential family of distributions allows to extend the GLM framework for the case of interval-valued variables.</p>
 </div>
+<div id="the-model" class="section level2 unnumbered">
+<h2>The model</h2>
+<p>Let <span class="math inline">\(E=\{e_1,\ldots,e_n\}\)</span> be a set of examples that are described by
+<span class="math inline">\(p+1\)</span> interval-valued variables <span class="math inline">\(Y\)</span>, <span class="math inline">\(T_{1},\ldots,T_{p}\)</span>. The interval-valued
+variable <span class="math inline">\(Y\)</span> is a dependent variable and it is related to a set of interval-valued
+variables <span class="math inline">\(T_j\)</span> (<span class="math inline">\(j=1,2,\ldots,p\)</span>), known as independent variables. Each example
+<span class="math inline">\(e_{i}\in E\)</span> (<span class="math inline">\(i=1,\ldots,n\)</span>) is denoted by an interval quantitative feature
+vector <span class="math inline">\((\mathbf t_{i},y_{i})\)</span>, with <span class="math inline">\(\mathbf t_{i} = (t_{i1},\ldots,t_{ip})\)</span>,
+where <span class="math inline">\(t_{ij}=[a_{ij},b_{ij}] \in \Im = \{[a,b]: a, b \in \Re, a \leq b\}\)</span> <span class="math inline">\((j=1,\ldots,p)\)</span>
+and <span class="math inline">\(y_{i} = [y_{Li},y_{Ui}] \in \Im\)</span> are the observed values of <span class="math inline">\(T_{j}\)</span> and <span class="math inline">\(Y\)</span>,
+respectively.</p>
+<p>Now, let <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(X_{1j}\)</span> and <span class="math inline">\(Y_2\)</span>, <span class="math inline">\(X_{2j}\)</span> (<span class="math inline">\(j=1,2,\ldots,p\)</span>) be quantitative variables
+that represent any pair of interval features from the interval-valued variables <span class="math inline">\(Y\)</span> and <span class="math inline">\(T_{j}\)</span>, respectively. In case where those variables represent, respectively, the lower and upper boundaries of the interval variables <span class="math inline">\(Y\)</span> and <span class="math inline">\(T_{j}\)</span>,
+each example <span class="math inline">\(e_{i} \in E\)</span> (<span class="math inline">\(i=1,\ldots,n\)</span>) will be denoted by two vectors: <span class="math inline">\((\mathbf x^{L}_{i},y^{L}_{i})\)</span>
+and <span class="math inline">\((\mathbf x^{U}_{i}, y^{U}_{i})\)</span>, with <span class="math inline">\(\mathbf x^{L}_{i} = (x^{L}_{i1}, \ldots, x^{L}_{ip})\)</span> and <span class="math inline">\(\mathbf x^{U}_{i} = (x^{U}_{i1},\ldots, x^{U}_{ip})\)</span>, where <span class="math inline">\(x^{L}_{ij} = a_{ij}\)</span>, <span class="math inline">\(x^{U}_{ij} = b_{ij}\)</span>, <span class="math inline">\(y^{L}_{i} = y_{Li}\)</span> and <span class="math inline">\(y^{U}_{i} = y_{Ui}\)</span>
+are the observed values of the quantitative variables <span class="math inline">\(X^{L}_{j}\)</span>, <span class="math inline">\(X^{U}_{j}\)</span>, <span class="math inline">\(Y^{L}\)</span> and <span class="math inline">\(Y^{U}\)</span>, respectively. Likewise, for the case where those variables
+represent, respectively, the midpoint and half-range of the interval variables <span class="math inline">\(Y\)</span> and <span class="math inline">\(T_{j}\)</span>,
+each example <span class="math inline">\(e_{i} \in E\)</span> (<span class="math inline">\(i=1,\ldots,n\)</span>) will be denoted by the vectors
+<span class="math inline">\((\mathbf x^{m}_{i}, y^{m}_{i})\)</span> and <span class="math inline">\((\mathbf x^{r}_{i}, y^{r}_{i})\)</span>,
+with <span class="math inline">\(\mathbf x^{m}_{i} = (x^{m}_{i1}, \ldots, x^{m}_{ip})\)</span> and <span class="math inline">\(\mathbf x^{r}_{i} = (x^{r}_{i1},\ldots, x^{r}_{ip})\)</span>, where <span class="math inline">\(x^{m}_{ij} = (a_{ij} + b_{ij})/2\)</span>, <span class="math inline">\(x^{r}_{ij}=(b_{ij}-a_{ij})/2\)</span>,
+<span class="math inline">\(y^{m}_{i}=(y_{Li}+y_{Ui})/2\)</span> and <span class="math inline">\(y^{r}_{i} = (y_{Ui} - y_{Li})/2\)</span> are the observed values of
+the variables <span class="math inline">\(X^{m}_{j}\)</span>, <span class="math inline">\(X^{r}_{j}\)</span>, <span class="math inline">\(Y^{m}\)</span> and <span class="math inline">\(Y^{r}\)</span>, respectively.</p>
+<p>Following the GLM framework,  consider a  with probabilistic support
+defined by two components (a random and a syste-ma-tic component) to model interval-valued data.
+The random component considers the bivariate random vector <span class="math display">\[\textbf{Y} = \left[\begin{array}{c}
+Y_{1}\\
+Y_{2}\end{array}\right],\]</span> having the bivariate exponential family ().
+In the systematic component, the explanatory variables <span class="math inline">\(X_{1j}\)</span> and <span class="math inline">\(X_{2j}\)</span> (<span class="math inline">\(j=1,2,\ldots,p\)</span>)
+are responsible for the variability of <span class="math inline">\(Y_{1}\)</span> and <span class="math inline">\(Y_{2}\)</span>, respectively, and they are defined by</p>
+<p><span class="math display" id="eq:systematic">\[\begin{eqnarray}
+\pmb \eta_{1} =
+g_{1}(\pmb \mu_{1})=  \mathbf
+X_{1}\pmb \beta_{1}}\,\,\,\mbox{and}\,\,\,
+\pmb \eta_{2} =
+g_{2}(\pmb \mu_{2})=\mathbf
+X_{2}\pmb \beta_{2},
+\tag{1.3}
+\end{eqnarray}\]</span>
+where <span class="math inline">\(\mathbf X_{1}\)</span> and <span class="math inline">\(\mathbf X_{2}\)</span> are known model matrices
+formed by the observed values of the variables <span class="math inline">\(X_{1j}\)</span> and <span class="math inline">\(X_{2j}\)</span>,
+respectively, <span class="math inline">\(\beta\)</span><span class="math inline">\(_{1}\)</span> and <span class="math inline">\(\beta\)</span><span class="math inline">\(_{2}\)</span>
+are vectors of parameters to be estimated,
+<span class="math inline">\(\eta\)</span><span class="math inline">\(_{1}\)</span> and <span class="math inline">\(\eta\)</span><span class="math inline">\(_{2}\)</span> are
+the linear predictors, <span class="math inline">\(\mu\)</span><span class="math inline">\(_{1}\)</span> and <span class="math inline">\(\mu\)</span><span class="math inline">\(_{2}\)</span>
+are the mean of the res-pon-se variables <span class="math inline">\(Y_{1}\)</span> and <span class="math inline">\(Y_{2}\)</span>, respectively, with
+=<span class="math inline">\((\eta_{l_{1}},\ldots, \eta_{l_{n}})^\top,\)</span> = <span class="math inline">\((\mu_{l_{1}},\ldots, \mu_{l_{n}})^\top\)</span> and <span class="math inline">\(\beta\)</span><span class="math inline">\(_{l}\)</span> <span class="math inline">\(=(\beta_{l_{0}},\ldots,\beta_{l_{p}})^\top\)</span>, <span class="math inline">\(l = 1,2\)</span>. Here, <span class="math inline">\(g_{1}(\)</span>) and <span class="math inline">\(g_{2}(\)</span>)
+are well-known link functions that connect the mean of the res-pon-se variables <span class="math inline">\(Y_{1}\)</span> and <span class="math inline">\(Y_{2}\)</span> with the explanatory variables <span class="math inline">\(X_{1j}\)</span> and <span class="math inline">\(X_{2j}\)</span> (<span class="math inline">\(j=1,\ldots,p\)</span>), respectively, being possible to choose different link functions.
+A few functions available for the  are:
+, among others.
+However, some link functions have particular properties and can be preferred
+in some situations. For example, if one considers the half-range of intervals in the
+random component, the logarithmic link function will guarantee positiveness
+for the predicted values of <span class="math inline">\(\hat{y}_{i}^{r}\)</span> (<span class="math inline">\(\hat{y}_{i}^{r} &gt;0\)</span>)
+and this result implies that <span class="math inline">\(\hat{y}_{i}^{L} \leq \hat{y}_{i}^{U}\)</span>, <span class="math inline">\(i = 1, \ldots, n\)</span>.</p>
+
+<div id="refs" class="references">
+<div>
+<p>Billard, L., and E. Diday. 2000. “Regression Analysis for Interval-Valued Data.” In <em>Data Analysis, Classification, and Related Methods</em>, edited by Henk A. L. Kiers, Jean-Paul Rasson, Patrick J. F. Groenen, and Martin Schader, 369–74. Heidelberg: Springer. <a href="https://doi.org/10.1007/978-3-642-59789-3_58">https://doi.org/10.1007/978-3-642-59789-3_58</a>.</p>
+</div>
+<div>
+<p>Billard, Lynne, and Edwin Diday. 2007. <em>Symbolic Data Analysis: Conceptual Statistics and Data Mining (Wiley Series in Computational Statistics)</em>. John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Blanco-Fernández, Angela, Norberto Corral, and Gil González-Rodrı́guez. 2011. “Estimation of a Flexible Simple Linear Model for Interval Data Based on Set Arithmetic.” <em>Computational. Statistics &amp; Data Analysis</em> 55 (9): 2568–78. <a href="https://doi.org/10.1016/j.csda.2011.03.005">https://doi.org/10.1016/j.csda.2011.03.005</a>.</p>
+</div>
+<div>
+<p>Bock, Hans Hermann. 2000. <em>Analysis of Symbolic Data: Exploratory Methods for Extracting Statistical Information from Complex Data</em>. Edited by E. Diday. Secaucus, NJ, USA: Springer-Verlag.</p>
+</div>
+<div>
+<p>Brahim, Brahim, and Sun Makosso-Kallyth. 2013. <em>GPCSIV: GPCSIV, Generalized Principal Component of Symbolic Interval Variables</em>. <a href="http://CRAN.R-project.org/package=GPCSIV">http://CRAN.R-project.org/package=GPCSIV</a>.</p>
+</div>
+<div>
+<p>Brito, Paula, and A. Pedro Duarte Silva. 2012. “Modelling Interval Data with Normal and Skew-Normal Distributions.” <em>Journal of Applied Statistics</em> 39 (1): 3–20. <a href="https://doi.org/10.1080/02664763.2011.575125">https://doi.org/10.1080/02664763.2011.575125</a>.</p>
+</div>
+<div>
+<p>Diday, Edwin, and Monique Noirhomme-Fraiture. 2008. <em>Symbolic Data Analysis and the Sodas Software</em>. New York, NY, USA: Wiley-Interscience.</p>
+</div>
+<div>
+<p>Dudek, Andrzej, Marcin Pelka, and Justyna Wilk. 2013. <em>SymbolicDA: Analysis of Symbolic Data</em>. <a href="http://CRAN.R-project.org/package=symbolicDA">http://CRAN.R-project.org/package=symbolicDA</a>.</p>
+</div>
+<div>
+<p>Fagundes, Roberta A.A., Renata M.C.R. Souza, and Francisco José A. Cysneiros. 2013. “Robust Regression with Application to Symbolic Interval Data.” <em>Engineering Applications of Artificial Intelligence</em> 26 (1): 564–73. <a href="https://doi.org/http://dx.doi.org/10.1016/j.engappai.2012.05.004">https://doi.org/http://dx.doi.org/10.1016/j.engappai.2012.05.004</a>.</p>
+</div>
+<div>
+<p>Gil, María Ángeles, Gil González-Rodríguez, Ana Colubi, and Manuel Montenegro. 2007. “Testing Linear Independence in Linear Models with Interval-Valued Data.” <em>Computational Statistics &amp; Data Analysis</em> 51 (6): 3002–15. <a href="https://doi.org/http://dx.doi.org/10.1016/j.csda.2006.01.015">https://doi.org/http://dx.doi.org/10.1016/j.csda.2006.01.015</a>.</p>
+</div>
+<div>
+<p>Iwasaki, Masakazu, and Hiroe Tsubaki. 2005. “A New Bivariate Distribution in Natural Exponential Family.” <em>Metrika</em> 61 (3): 323–36. <a href="https://doi.org/10.1007/s001840400348">https://doi.org/10.1007/s001840400348</a>.</p>
+</div>
+<div>
+<p>Lima Neto, Eufrásio Andrade, Gauss M. Cordeiro, and Francisco Assis T. De Carvalho. 2011. “Bivariate Symbolic Regression Models for Interval-Valued Variables.” <em>Journal of Statistical Computation and Simulation</em> 81 (11): 1727–44. <a href="https://doi.org/10.1080/00949655.2010.500470">https://doi.org/10.1080/00949655.2010.500470</a>.</p>
+</div>
+<div>
+<p>Lima Neto, Eufrásio Andrade, and Francisco Assis T. De Carvalho. 2008. “Centre and Range Method for Fitting a Linear Regression Model to Symbolic Interval Data.” <em>Computational Statistics &amp; Data Analysis</em> 52 (3): 1500–1515. <a href="https://doi.org/http://dx.doi.org/10.1016/j.csda.2007.04.014">https://doi.org/http://dx.doi.org/10.1016/j.csda.2007.04.014</a>.</p>
+</div>
+<div>
+<p>———. 2010. “Constrained Linear Regression Models for Symbolic Interval-Valued Variables.” <em>Computational Statistics &amp; Data Analysis</em> 54 (2): 333–47. <a href="https://doi.org/http://dx.doi.org/10.1016/j.csda.2009.08.010">https://doi.org/http://dx.doi.org/10.1016/j.csda.2009.08.010</a>.</p>
+</div>
+<div>
+<p>Lima Neto, Eufrásio Andrade, and Claudio A. Vasconcelos. 2012. <em>IRegression: Regression Methods for Interval-Valued Variables</em>. <a href="http://CRAN.R-project.org/package=iRegression">http://CRAN.R-project.org/package=iRegression</a>.</p>
+</div>
+<div>
+<p>Maia, André Luis Santiago, and Francisco de A.T. de Carvalho. 2008. “Fitting a Least Absolute Deviation Regression Model on Interval-Valued Data.” In <em>Advances in Artificial Intelligence - Sbia 2008: 19th Brazilian Symposium on Artificial Intelligence Savador, Brazil, October 26-30, 2008. Proceedings</em>, edited by Gerson Zaverucha and Augusto Loureiro da Costa, 207–16. Heidelberg: Springer. <a href="https://doi.org/10.1007/978-3-540-88190-2_26">https://doi.org/10.1007/978-3-540-88190-2_26</a>.</p>
+</div>
+<div>
+<p>Queiroz Filho, Ricardo Jorge Almeida, and Roberta Andrade Araujo Fagundes. 2012. <em>ISDA.R: Interval Symbolic Data Analysis for R</em>. <a href="http://CRAN.R-project.org/package=ISDA.R">http://CRAN.R-project.org/package=ISDA.R</a>.</p>
+</div>
+<div>
+<p>R Core Team. 2014. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="http://www.R-project.org/">http://www.R-project.org/</a>.</p>
+</div>
+<div>
+<p>Rodriguez, Oldemar, Olger Calderon, and Roberto Zuniga. 2014. <em>RSDA: RSDA - R to Symbolic Data Analysis</em>. <a href="http://CRAN.R-project.org/package=RSDA">http://CRAN.R-project.org/package=RSDA</a>.</p>
+</div>
+<div>
+<p>Silva, Pedro Duarte, and Paula Brito. 2015. <em>MAINT.Data: Model and Analyse Interval Data</em>. <a href="http://CRAN.R-project.org/package=MAINT.Data">http://CRAN.R-project.org/package=MAINT.Data</a>.</p>
+</div>
+<div>
+<p>Souza, Renata M. C. R., Diego C. F. Queiroz, and Francisco José A. Cysneiros. 2011. “Logistic Regression-Based Pattern Classifiers for Symbolic Interval Data.” <em>Pattern Analysis and Applications</em> 14 (3): 273–82. <a href="https://doi.org/10.1007/s10044-011-0222-1">https://doi.org/10.1007/s10044-011-0222-1</a>.</p>
+</div>
+<div>
+<p>Sun, Y., and C. Li. 2014. “Linear regression for interval-valued data: a new and comprehensive model.” <em>ArXiv E-Prints</em>, January. <a href="http://arxiv.org/abs/1401.1831">http://arxiv.org/abs/1401.1831</a>.</p>
+</div>
+<div>
+<p>Xu, Wei. 2010. “Symbolic Data Analysis: Interval-Valued Data Regression, Phd. Thesis, University of Georgia, Usa.” PhD.Thesis, University of Georgia.</p>
+</div>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
