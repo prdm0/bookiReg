@@ -13,7 +13,7 @@ link-citations: yes
 always_allow_html: yes
 url: 'https://prdm0.github.io/iRegression/'
 github-repo: prdm0/bookiRegression
-#site: bookdown::bookdown_site
+site: bookdown::bookdown_site
 documentclass: book
 ---
 

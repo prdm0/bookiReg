@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>bivariate_symbolic_regression_model_BSRM.utf8.md</title>
+  <meta name="description" content="">
+  <meta name="generator" content="bookdown <!--bookdown:version--> and GitBook 2.6.7">
+
+  <meta property="og:title" content="bivariate_symbolic_regression_model_BSRM.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="bivariate_symbolic_regression_model_BSRM.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#bivariate-symbolic-regression-model-bsrm"><span class="toc-section-number">1</span> Bivariate symbolic regression model (BSRM)</a><ul>
+<li><a href="#preliminaries"><span class="toc-section-number">1.1</span> Preliminaries</a></li>
+</ul></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="bivariate-symbolic-regression-model-bsrm" class="section level1">
+<h1><span class="header-section-number">1</span> Bivariate symbolic regression model (BSRM)</h1>
+<div id="preliminaries" class="section level2">
+<h2><span class="header-section-number">1.1</span> Preliminaries</h2>
+<p>Let <span class="math inline">\(Y = \{y_1,\ldots,y_n\}\)</span> be a set of observations that represents a random sample of the interval-valued variable <span class="math inline">\(Y\)</span>. Each observation <span class="math inline">\(y_{i} = [y_{Li},y_{Ui}] \in Y\)</span> is defined as an interval <span class="math inline">\(y \in \Im = \{[y_{L},y_{U}] : y_{L}, y_{U} \in \Re, y_{L} \leq y_{U}\}\)</span> and represents the observed value of the interval variable <span class="math inline">\(Y\)</span>. Despite the loss of information, we consider an interval-valued variable <span class="math inline">\(Y\)</span> as a two-dimensional or a bivariate quantitative feature vector <span class="math inline">\(\mathbf y_{i}=(y_{1i},y_{2i})\)</span>, where the variables <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are one-dimensional random variables representing, for example, the lower and upper boundaries <span class="math inline">\((Y^{L},Y^{U})\)</span> or the midpoint and half-range <span class="math inline">\((Y^{m},Y^{r})\)</span> of the intervals or any other pair of interval features possible to be represented.</p>
+</div>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

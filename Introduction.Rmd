@@ -20,5 +20,3 @@ This paper introduces the **R** [@R2015] package **iRegression** [@iRegression20
 This article is organized as follows: Section 2 details the bivariate symbolic regression method, the parameter estimates algorithm, inference aspects, goodness-of-fit and residual measures. A description of the **iRegression** package is presented in Section 3. An application to real-life data set is demonstrated in Section 4. Finally, in Section 5 we conclude the paper with some remarks. 
 
 ---
-
-# References {-}

@@ -1,0 +1,42 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Bivariate symbolic regression model (BSRM) {-}
+
+## Preliminaries {-}
+
+Let $Y = \{y_1,\ldots,y_n\}$ be a set of observations that represents a random sample of the interval-valued variable $Y$.  Each observation $y_{i} = [y_{Li},y_{Ui}] \in Y$ is defined as an interval $y \in \Im = \{[y_{L},y_{U}] : y_{L}, y_{U} \in \Re, y_{L} \leq y_{U}\}$ and represents the observed value of the interval variable $Y$. Despite the loss of information, we consider an interval-valued variable $Y$ as a two-dimensional or a bivariate  quantitative feature vector $\mathbf y_{i}=(y_{1i},y_{2i})$, where the variables $Y_1$ and $Y_2$ are one-dimensional random variables representing, for example, the lower and upper boundaries $(Y^{L},Y^{U})$ or the midpoint and half-range $(Y^{m},Y^{r})$ of the intervals or any other pair of interval features possible to be represented.
+
+Consider that the joint density probability function of the bivariate quantitative
+feature vector $\mathbf y_{i}=(y_{1i},y_{2i})$ belongs to the bivariate exponential family of 
+distributions \citep{IT2005} defined by
+
+\begin{equation}
+    f(\mathbf y; \pmb \theta)=
+    \mathrm{exp}\left[\phi^{-1}\{y_{1}\theta_{1} + y_{2}\theta_{2} -
+    b(\theta_{1},\theta_{2},\rho)\}+ c(y_{1},y_{2},\rho,\phi)\right],
+    (\#eq:random)
+\end{equation}
+
+\noindent where \boldmath$\theta$\unboldmath=
+$(\theta_{1},\theta_{2})$ is the vector of canonical parameters, $\phi$ is a common dispersion parameter
+and $\rho$ is a constant correlation parameter between these two
+random variables. We assume that the functions
+$b(\cdot,\cdot,\cdot)$ and $c(\cdot,\cdot, \cdot, \cdot)$ are known.
+The function $b(\cdot,\cdot,\cdot)$ is the cumulant generating
+function of (\ref{eq:random}) and the mean and variance of the bivariate 
+random vector $\mathbf Y=(Y_1, Y_2)$ can be obtained from well-known 
+equations of natural exponential families and presents a direct relation with the GLM framework. The log-likelihood function for the $i$th observation can be written as
+
+\begin{equation}
+  l_{i} = l_{i}(\pmb \theta,\phi,\rho) =
+        \phi^{-1} \{y_{1i}\theta_{1} +                                                                           y_{2i}\theta_{2}-b(\theta_{1},\theta_{2},\rho)\}+c(y_{1i},y_{2i},\rho,\phi).
+(\#eq:loglikelihood)
+\end{equation}
+
+The use of the bivariate exponential family of distributions allows to extend the GLM framework for the case of interval-valued variables.
+
+
+# References {-}
