@@ -92,5 +92,10 @@ random component, the logarithmic link function will guarantee positiveness
 for the predicted values of $\hat{y}_{i}^{r}$ ($\hat{y}_{i}^{r} >0$)
 and this result implies that $\hat{y}_{i}^{L} \leq \hat{y}_{i}^{U}$, $i = 1, \ldots, n$.
 
+## Parameter estimation {-}
+
+The maximum likelihood method will be used as a theoretical basis for parameter estimation  in the **BSRM**. In order to maximize the log-likelihood, [@LimaNetoetal2011] first assumed that $\rho$ is
+fixed and then obtained the likelihood equations for estimating $\pmb \beta_{1}$ and $\pmb \beta_{2}$. Both vectors can be estimated without knowledge of $\phi$. In principle, $\phi$ could also be estimated by maximum likelihood although there may be practical difficulties associated with this method for some bivariate distributions in \@ref(eq:random). Next, a simple approach will be given to estimate $\phi$ based on the model deviance.
+
 ---
 # References {-}

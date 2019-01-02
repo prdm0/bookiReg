@@ -69,6 +69,7 @@
 <li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html"><i class="fa fa-check"></i>Bivariate symbolic regression model (BSRM)</a><ul>
 <li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#preliminaries"><i class="fa fa-check"></i>Preliminaries</a></li>
 <li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#the-model"><i class="fa fa-check"></i>The model</a></li>
+<li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#parameter-estimation"><i class="fa fa-check"></i>Parameter estimation</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -167,7 +168,18 @@ in some situations. For example, if one considers the half-range of intervals in
 random component, the logarithmic link function will guarantee positiveness
 for the predicted values of <span class="math inline">\(\hat{y}_{i}^{r}\)</span> (<span class="math inline">\(\hat{y}_{i}^{r} &gt;0\)</span>)
 and this result implies that <span class="math inline">\(\hat{y}_{i}^{L} \leq \hat{y}_{i}^{U}\)</span>, <span class="math inline">\(i = 1, \ldots, n\)</span>.</p>
+</div>
+<div id="parameter-estimation" class="section level2 unnumbered">
+<h2>Parameter estimation</h2>
+<p>The maximum likelihood method will be used as a theoretical basis for parameter estimation in the <strong>BSRM</strong>. In order to maximize the log-likelihood, <span class="citation">(Lima Neto, Cordeiro, and De Carvalho <a href="#ref-LimaNetoetal2011">2011</a>)</span> first assumed that <span class="math inline">\(\rho\)</span> is
+fixed and then obtained the likelihood equations for estimating <span class="math inline">\(\pmb \beta_{1}\)</span> and <span class="math inline">\(\pmb \beta_{2}\)</span>. Both vectors can be estimated without knowledge of <span class="math inline">\(\phi\)</span>. In principle, <span class="math inline">\(\phi\)</span> could also be estimated by maximum likelihood although there may be practical difficulties associated with this method for some bivariate distributions in <a href="bivariate-symbolic-regression-model-bsrm.html#eq:random">(1)</a>. Next, a simple approach will be given to estimate <span class="math inline">\(\phi\)</span> based on the model deviance.</p>
 <hr />
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-LimaNetoetal2011">
+<p>Lima Neto, Eufrásio Andrade, Gauss M. Cordeiro, and Francisco Assis T. De Carvalho. 2011. “Bivariate Symbolic Regression Models for Interval-Valued Variables.” <em>Journal of Statistical Computation and Simulation</em> 81 (11): 1727–44. <a href="https://doi.org/10.1080/00949655.2010.500470">https://doi.org/10.1080/00949655.2010.500470</a>.</p>
 </div>
 </div>
             </section>
