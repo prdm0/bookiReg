@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bivariate symbolic regression model (BSRM) | iRegression: An R Package for Regression Models with Interval Variables</title>
+  <title>2 Bivariate symbolic regression model (BSRM) | iRegression: An R Package for Regression Models with Interval Variables</title>
   <meta name="description" content="Escrever um prefácio">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Bivariate symbolic regression model (BSRM) | iRegression: An R Package for Regression Models with Interval Variables" />
+  <meta property="og:title" content="2 Bivariate symbolic regression model (BSRM) | iRegression: An R Package for Regression Models with Interval Variables" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://prdm0.github.io/iRegression/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="prdm0/bookiRegression" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bivariate symbolic regression model (BSRM) | iRegression: An R Package for Regression Models with Interval Variables" />
+  <meta name="twitter:title" content="2 Bivariate symbolic regression model (BSRM) | iRegression: An R Package for Regression Models with Interval Variables" />
   
   <meta name="twitter:description" content="Escrever um prefácio" />
   
@@ -32,7 +32,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="introduction.html">
+<link rel="prev" href="sec-introduction.html">
 <link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -65,11 +65,13 @@
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html"><i class="fa fa-check"></i>Bivariate symbolic regression model (BSRM)</a><ul>
-<li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#preliminaries"><i class="fa fa-check"></i>Preliminaries</a></li>
-<li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#the-model"><i class="fa fa-check"></i>The model</a></li>
-<li class="chapter" data-level="" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#parameter-estimation"><i class="fa fa-check"></i>Parameter estimation</a></li>
+<li class="chapter" data-level="1" data-path="sec-introduction.html"><a href="sec-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="sec-introduction.html"><a href="sec-introduction.html#this-article-is-organized-as-follows-section-2-details-the-bivariate-symbolic-regression-method-the-parameter-estimates-algorithm-inference-aspects-goodness-of-fit-and-residual-measures.-a-description-of-the-iregression-package-is-presented-in-section-3.-an-application-to-real-life-data-set-is-demonstrated-in-section-4.-finally-in-section-5-we-conclude-the-paper-with-some-remarks."><i class="fa fa-check"></i><b>1.1</b> This article is organized as follows: Section 2 details the bivariate symbolic regression method, the parameter estimates algorithm, inference aspects, goodness-of-fit and residual measures. A description of the <strong>iRegression</strong> package is presented in Section 3. An application to real-life data set is demonstrated in Section 4. Finally, in Section 5 we conclude the paper with some remarks.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html"><i class="fa fa-check"></i><b>2</b> Bivariate symbolic regression model (BSRM)</a><ul>
+<li class="chapter" data-level="2.1" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#preliminaries"><i class="fa fa-check"></i><b>2.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="2.2" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:model"><i class="fa fa-check"></i><b>2.2</b> The model</a></li>
+<li class="chapter" data-level="2.3" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:parest"><i class="fa fa-check"></i><b>2.3</b> Parameter estimation</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -89,10 +91,10 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bivariate-symbolic-regression-model-bsrm" class="section level1 unnumbered">
-<h1>Bivariate symbolic regression model (BSRM)</h1>
-<div id="preliminaries" class="section level2 unnumbered">
-<h2>Preliminaries</h2>
+<div id="bivariate-symbolic-regression-model-bsrm" class="section level1">
+<h1><span class="header-section-number">2</span> Bivariate symbolic regression model (BSRM)</h1>
+<div id="preliminaries" class="section level2">
+<h2><span class="header-section-number">2.1</span> Preliminaries</h2>
 <p>Let <span class="math inline">\(Y = \{y_1,\ldots,y_n\}\)</span> be a set of observations that represents a random sample of the interval-valued variable <span class="math inline">\(Y\)</span>. Each observation <span class="math inline">\(y_{i} = [y_{Li},y_{Ui}] \in Y\)</span> is defined as an interval <span class="math inline">\(y \in \Im = \{[y_{L},y_{U}] : y_{L}, y_{U} \in \Re, y_{L} \leq y_{U}\}\)</span> and represents the observed value of the interval variable <span class="math inline">\(Y\)</span>. Despite the loss of information, we consider an interval-valued variable <span class="math inline">\(Y\)</span> as a two-dimensional or a bivariate quantitative feature vector <span class="math inline">\(\mathbf y_{i}=(y_{1i},y_{2i})\)</span>, where the variables <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are one-dimensional random variables representing, for example, the lower and upper boundaries <span class="math inline">\((Y^{L},Y^{U})\)</span> or the midpoint and half-range <span class="math inline">\((Y^{m},Y^{r})\)</span> of the intervals or any other pair of interval features possible to be represented.</p>
 <p>Consider that the joint density probability function of the bivariate quantitative
 feature vector <span class="math inline">\(\mathbf y_{i}=(y_{1i},y_{2i})\)</span> belongs to the bivariate exponential family of
@@ -101,7 +103,7 @@ distributions  defined by</p>
     f(\mathbf y; \pmb \theta)=
     \mathrm{exp}\left[\phi^{-1}\{y_{1}\theta_{1} + y_{2}\theta_{2} -
     b(\theta_{1},\theta_{2},\rho)\}+ c(y_{1},y_{2},\rho,\phi)\right],
-    \tag{1}
+    \tag{2.1}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(\theta\)</span>=
 <span class="math inline">\((\theta_{1},\theta_{2})\)</span> is the vector of canonical parameters, <span class="math inline">\(\phi\)</span> is a common dispersion parameter
@@ -115,12 +117,12 @@ equations of natural exponential families and presents a direct relation with th
 <p><span class="math display" id="eq:loglikelihood">\[\begin{equation}
   l_{i} = l_{i}(\pmb \theta,\phi,\rho) =
         \phi^{-1} \{y_{1i}\theta_{1} +                                                                           y_{2i}\theta_{2}-b(\theta_{1},\theta_{2},\rho)\}+c(y_{1i},y_{2i},\rho,\phi).
-\tag{2}
+\tag{2.2}
 \end{equation}\]</span></p>
 <p>The use of the bivariate exponential family of distributions allows to extend the GLM framework for the case of interval-valued variables.</p>
 </div>
-<div id="the-model" class="section level2 unnumbered">
-<h2>The model</h2>
+<div id="subsec:model" class="section level2">
+<h2><span class="header-section-number">2.2</span> The model</h2>
 <p>Let <span class="math inline">\(E=\{e_1,\ldots,e_n\}\)</span> be a set of examples that are described by
 <span class="math inline">\(p+1\)</span> interval-valued variables <span class="math inline">\(Y\)</span>, <span class="math inline">\(T_{1},\ldots,T_{p}\)</span>. The interval-valued
 variable <span class="math inline">\(Y\)</span> is a dependent variable and it is related to a set of interval-valued
@@ -150,7 +152,7 @@ In the systematic component, the explanatory variables <span class="math inline"
 are responsible for the variability of <span class="math inline">\(Y_{1}\)</span> and <span class="math inline">\(Y_{2}\)</span>, respectively, and they are defined by</p>
 <p><span class="math display" id="eq:systematic">\[\begin{equation}
 \pmb \eta_{1} = g_{1}(\pmb \mu_{1})= \pmb X_{1} \pmb \beta_{1}\,\, \mbox{and}\,\, \pmb \eta_{2} = g_{2}(\pmb \mu_{2})= \pmb X_{2} \pmb \beta_{2},
-\tag{3}
+\tag{2.3}
 \end{equation}\]</span>
 where <span class="math inline">\(\pmb X_{1}\)</span> and <span class="math inline">\(\pmb X_{2}\)</span> are known model matrices
 formed by the observed values of the variables <span class="math inline">\(X_{1j}\)</span> and <span class="math inline">\(X_{2j}\)</span>,
@@ -169,10 +171,56 @@ random component, the logarithmic link function will guarantee positiveness
 for the predicted values of <span class="math inline">\(\hat{y}_{i}^{r}\)</span> (<span class="math inline">\(\hat{y}_{i}^{r} &gt;0\)</span>)
 and this result implies that <span class="math inline">\(\hat{y}_{i}^{L} \leq \hat{y}_{i}^{U}\)</span>, <span class="math inline">\(i = 1, \ldots, n\)</span>.</p>
 </div>
-<div id="parameter-estimation" class="section level2 unnumbered">
-<h2>Parameter estimation</h2>
+<div id="subsec:parest" class="section level2">
+<h2><span class="header-section-number">2.3</span> Parameter estimation</h2>
 <p>The maximum likelihood method will be used as a theoretical basis for parameter estimation in the <strong>BSRM</strong>. In order to maximize the log-likelihood, <span class="citation">(Lima Neto, Cordeiro, and De Carvalho <a href="#ref-LimaNetoetal2011">2011</a>)</span> first assumed that <span class="math inline">\(\rho\)</span> is
-fixed and then obtained the likelihood equations for estimating <span class="math inline">\(\pmb \beta_{1}\)</span> and <span class="math inline">\(\pmb \beta_{2}\)</span>. Both vectors can be estimated without knowledge of <span class="math inline">\(\phi\)</span>. In principle, <span class="math inline">\(\phi\)</span> could also be estimated by maximum likelihood although there may be practical difficulties associated with this method for some bivariate distributions in <a href="bivariate-symbolic-regression-model-bsrm.html#eq:random">(1)</a>. Next, a simple approach will be given to estimate <span class="math inline">\(\phi\)</span> based on the model deviance.</p>
+fixed and then obtained the likelihood equations for estimating <span class="math inline">\(\pmb \beta_{1}\)</span> and <span class="math inline">\(\pmb \beta_{2}\)</span>. Both vectors can be estimated without knowledge of <span class="math inline">\(\phi\)</span>. In principle, <span class="math inline">\(\phi\)</span> could also be estimated by maximum likelihood although there may be practical difficulties associated with this method for some bivariate distributions in <a href="bivariate-symbolic-regression-model-bsrm.html#eq:random">(2.1)</a>. Next, a simple approach will be given to estimate <span class="math inline">\(\phi\)</span> based on the model deviance.</p>
+<p>An algorithm for estimating these vectors of linear parameters can be
+developed from the scoring method. Differentiating the total log-likelihood
+<a href="bivariate-symbolic-regression-model-bsrm.html#eq:loglikelihood">(2.2)</a> yields the score functions for <span class="math inline">\(\pmb \beta_{1}\)</span>
+and <span class="math inline">\(\pmb \beta_{2}\)</span></p>
+<p><span class="math display">\[U(\beta_{1j}) = \frac{\partial{l(\pmb\beta_{1}},\pmb \beta_{2})}{\partial{\beta_{1j}}} = \frac{1}{\phi} \sum_{i=1}^{n} (y_{1i} - b^{(1)}_{i})\frac{\partial{\theta_{1}}}{\partial{\beta_{1j}}} = 
+\frac{1}{\phi} \sum_{i=1}^{n} (y_{1i} - \mu_{1i})\frac{1}{V^{(1)}_{i}g&#39;_{1}(\mu_{1i})}x_{1_{ij}}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[ U(\beta_{2j}) = \frac{\partial{l(\pmb\beta_{1}, \pmb \beta_{2}})}{\partial{\beta_{2j}}} = \frac{1}{\phi} \sum_{i=1}^{n} (y_{2i} - b^{(2)}_{i})\frac{\partial{\theta_{2}}}{\partial{\beta_{2j}}} = \frac{1}{\phi} \sum_{i=1}^{n} (y_{2r} - \mu_{2i})\frac{1}{V^{(2)}_{i}g&#39;_{2}(\mu_{2i})}x_{2_{ij}}.\]</span></p>
+<p>In matrix notation, the score functions are</p>
+<p><span class="math display" id="eq:score">\[\begin{equation}
+\pmb U(\beta_{1}) = (\pmb X_{1})^\top \pmb W_{1} \pmb z_{1}\,\,\,
+\mathrm{and}\,\,\,\pmb U(\pmb \beta_{2})= (\pmb X_{2})^\top \pmb W_{2} \pmb z_{2},
+\tag{2.4}
+\end{equation}\]</span>
+where <span class="math inline">\(\pmb W_{1}\)</span> and <span class="math inline">\(\pmb W_{2}\)</span> are diagonal weighted matrices with corresponding elements</p>
+<p><span class="math display">\[w_{1i}=[V^{(1)}_{i}\mbox{}g&#39;_{1}(\mu_{1i})^{2}]^{-1}\,\,\,\mbox{  and  }\,\,\,
+w_{2i}=[V^{(2)}_{i}\mbox{}g&#39;_{2}(\mu_{2i})^{2}]^{-1},\]</span></p>
+<p>and <span class="math inline">\(\pmb z_{1}\)</span> and <span class="math inline">\(\pmb z_{2}\)</span> are modified dependent variables related to <span class="math inline">\(\pmb y_{1}\)</span> and
+<span class="math inline">\(\pmb y_{2}\)</span> given by</p>
+<p><span class="math display">\[\pmb z_{1} = \pmb G_{1}(\pmb y_{1} - \pmb \mu_{1})\,\,\,\mbox{  and  }\,\,\,
+\pmb z_{2} = \mathbf G_{2}(\mathbf y_{2} - \pmb \mu_{2}),\]</span></p>
+<p>where <span class="math inline">\(\pmb G_{1} = \mathrm{diag}\{g&#39;_{1}(\mu_{1_{1}}),\ldots,g&#39;_{1}(\mu_{1_{n}})\}\)</span> and <span class="math inline">\(\pmb G_{2} = \mathrm{diag}\{g&#39;_{2}(\mu_{2_{1}}),\ldots,g&#39;_{2}(\mu_{2_{n}})\}\)</span> are <span class="math inline">\(n \times n\)</span> diagonal matrices.</p>
+<p>The expected value of the <em>sv</em>-th component of the information matrix for the vector of
+parameters <span class="math inline">\(\pmb \beta_{1}\)</span> is</p>
+<p><span class="math display">\[\kappa_{1(s,v)} = -E\left[\frac{\partial^{2}\beta_{1}}{\partial{\beta_{1s}}\partial{\beta_{1v}}}\right] = E\left[\frac{\partial{l(\pmb \beta_{1})}}{\partial{\beta_{1s}}}\frac{\partial{l(\pmb \beta_{1}})}{\partial{\beta_{1v}}}\right] = E[U(\beta_{1s})U(\beta_{1v})].\]</span>
+In matrix notation, the information matrices for <span class="math inline">\(\beta_{1}\)</span> and
+<span class="math inline">\(\beta_{2}\)</span> can be written as</p>
+<p><span class="math display">\[\pmb K_{1}=\phi^{-1}\, (\pmb X_{1})^\top \pmb W_{1} \pmb X_{1}\,\,\,\mbox{and}\,\,\,
+\pmb K_{2}=\phi^{-1}\, (\pmb X_{2})^\top \pmb W_{2} \pmb X_{2}.\]</span></p>
+<p>From the information matrices and equations <a href="bivariate-symbolic-regression-model-bsrm.html#eq:score">(2.4)</a>, we can use the scoring method to obtain the conditional maximum likelihood estimates (MLEs) of <span class="math inline">\(\pmb \beta_{1}\)</span> and
+<span class="math inline">\(\pmb \beta_{2}\)</span> for a given <span class="math inline">\(\rho\)</span>. We have</p>
+<p><span class="math display" id="eq:leastsquares">\[\begin{eqnarray}
+\pmb \beta^{(k+1)} = \pmb \beta^{(k)} +  (\pmb X^\top \pmb W^{(k)} \pmb X)^{-1}\pmb X^\top \pmb W^{(k)} \pmb z^{(k)},
+\tag{2.5}
+\end{eqnarray}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\pmb \beta^{(k+1)} = \left[\begin{array}{c} \pmb \beta_{1}^{(k+1)}\\ \pmb \beta_{2}^{(k+1)}\end{array} \right],
+\mbox{  } \mathbf X = \left[\begin{array}{cc} \pmb X_{1} &amp; \pmb 0\\ \pmb 0 &amp; \pmb X_{2} \end{array}\right],\]</span></p>
+<p><span class="math display">\[\mathbf W^{(k)} = \left[\begin{array}{cc}
+\pmb W_{1}^{(k)} &amp; \textbf{0}\\
+\textbf{0} &amp; \pmb W_{2}^{(k)}\end{array}\right]\,\,\mbox{and}\,\,\,
+\pmb z^{(k)} = \left[\begin{array}{c}
+\pmb z_{1}^{(k)}\\
+\pmb z_{2}^{(k)}\end{array} \right].\]</span></p>
+<p>Expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:leastsquares">(2.5)</a> has the same form of the estimating equations for the GLMs. In general terms, we regress the modified dependent variable <span class="math inline">\(\mathbf z^{(k)}\)</span> on the local model matrix <span class="math inline">\(\pmb X\)</span> by taking <span class="math inline">\(\pmb W^{(k)}\)</span> as a modified weighted matrix. At <span class="math inline">\(k = 1\)</span>, an initial appro-xi-ma-tion
+<span class="math inline">\(\pmb \beta^{(1)}\)</span> could be used to evaluate <span class="math inline">\(\pmb W^{(1)}\)</span> and <span class="math inline">\(\pmb z^{(1)}\)</span> from which equations () yield the next estimate <span class="math inline">\(\pmb \beta^{(2)}\)</span>. Hence, we update <span class="math inline">\(\pmb W^{(2)}\)</span> and <span class="math inline">\(\pmb z^{(2)}\)</span>, and so the iterations continue until the convergence is achieved and then the conditional MLE <span class="math inline">\(\hat{\pmb \beta}\)</span>, is obtained. In general, the convergence speed is fast, but it strongly depends on the choice of the initial value <span class="math inline">\(\pmb \beta^{(1)}\)</span>.</p>
 <hr />
 </div>
 </div>
@@ -187,7 +235,7 @@ fixed and then obtained the likelihood equations for estimating <span class="mat
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sec-introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
