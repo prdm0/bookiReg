@@ -3,7 +3,7 @@ knit: "bookdown::render_book"
 title: "iRegression: An R Package for Regression Models with Interval Variables"
 author: "Eufrasio de A. Lima Neto and Pedro Rafael D. Marinho"
 description: "Escrever um prefácio"
-date: "`r Sys.Date()`"
+date: "2019-01-02"
 output: bookdown::gitbook
 bibliography: [iReg.bib]
 biblio-style: apalike
@@ -36,3 +36,5 @@ In real problems, it is usual to have the available data presented as intervals.
 
 - In [iRegression (CRAN)](http://CRAN.r-project.org/package=iRegression) you can find the stable version of the package.
 </div>
+
+# References {-}

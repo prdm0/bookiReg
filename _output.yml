@@ -3,35 +3,10 @@ bookdown::gitbook:
   config:
     toc:
       collapse: section
-    edit: https://github.com/prdm0/bookiReg/edit/master/%s
+    edit: 
+      link: https://github.com/prdm0/bookiReg/edit/master/%s
+      text: "Edit"
     sharing: 
       github: yes
     toolbar:
       position: fixed
-    include:
-      header-includes:
-        - \usepackage{bbm}
-        - \usepackage{bm}
-        - \usepackage{url}
-        - \usepackage{alltt}
-        - \usepackage{amsmath}
-        - \usepackage{amsfonts}
-        - \usepackage{amsmath}
-        - \usepackage{amssymb}
-        - \usepackage{amsthm}
-        - \usepackage{nicefrac}
-#    download: ["pdf", "epub", "mobi"]
-#bookdown::pdf_book:
-#  base_format: rmarkdown::pdf_book
-#  includes:
-#    in_header: preamble.tex
-#  latex_engine: xelatex
-#  citation_package: natbib
-#  keep_tex: yes
-#bookdown::epub_book: default
-#bookdown::pdf_document2:
-#  includes:
-#    in_header: preamble.tex
-#  latex_engine: xelatex
-#  citation_package: natbib
-#  keep_tex: yes
