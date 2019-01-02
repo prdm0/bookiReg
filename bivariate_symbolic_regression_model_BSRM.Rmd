@@ -168,4 +168,5 @@ Expression \@ref(eq:leastsquares) has the same form of the estimating equations 
 $\pmb \beta^{(1)}$ could be used to evaluate $\pmb W^{(1)}$ and $\pmb z^{(1)}$ from which equations (\ref{leastsquares}) yield the next estimate $\pmb \beta^{(2)}$. Hence, we update $\pmb W^{(2)}$ and $\pmb z^{(2)}$, and so the iterations continue until the convergence is achieved and then the conditional MLE $\hat{\pmb \beta}$, is obtained. In general, the convergence speed is fast, but it strongly depends on the choice of the initial value $\pmb \beta^{(1)}$.
 
 ---
+
 # References {-}
