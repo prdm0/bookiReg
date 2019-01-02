@@ -69,15 +69,10 @@ Y_{2}\end{array}\right],\] having the bivariate exponential family (\ref{eq:rand
 In the systematic component, the explanatory variables $X_{1j}$ and $X_{2j}$ ($j=1,2,\ldots,p$) 
 are responsible for the variability of $Y_{1}$ and $Y_{2}$, respectively, and they are defined by
 
-\begin{eqnarray}
-\pmb \eta_{1} =
-g_{1}(\pmb \mu_{1})=  \mathbf
-X_{1}\pmb \beta_{1}}\,\,\,\mbox{and}\,\,\,
-\pmb \eta_{2} =
-g_{2}(\pmb \mu_{2})=\mathbf
-X_{2}\pmb \beta_{2},
+\begin{equation}
+\pmb \eta_{1} = g_{1}(\pmb \mu_{1})= \pmb X_{1} \pmb \beta_{1}\,\, \mbox{and}\,\, \pmb \eta_{2} = g_{2}(\pmb \mu_{2})= \pmb X_{2} \pmb \beta_{2}
 (\#eq:systematic)
-\end{eqnarray}
+\end{equation}
 where $\mathbf X_{1}$ and $\mathbf X_{2}$ are known model matrices
 formed by the observed values of the variables $X_{1j}$ and $X_{2j}$, 
 respectively, \boldmath$\beta$\unboldmath$_{1}$ and \boldmath$\beta$\unboldmath$_{2}$
