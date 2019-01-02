@@ -36,3 +36,4 @@ In real problems, it is usual to have the available data presented as intervals.
 
 - In [iRegression (CRAN)](http://CRAN.r-project.org/package=iRegression) you can find the stable version of the package.
 </div>
+---

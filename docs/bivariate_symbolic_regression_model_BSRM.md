@@ -92,4 +92,5 @@ random component, the logarithmic link function will guarantee positiveness
 for the predicted values of $\hat{y}_{i}^{r}$ ($\hat{y}_{i}^{r} >0$)
 and this result implies that $\hat{y}_{i}^{L} \leq \hat{y}_{i}^{U}$, $i = 1, \ldots, n$.
 
+---
 # References {-}
