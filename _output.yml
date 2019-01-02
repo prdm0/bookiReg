@@ -2,7 +2,7 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
-      collapse: section
+      collapse: none
     edit: 
       link: https://github.com/prdm0/bookiReg/edit/master/%s
       text: "Edit"
