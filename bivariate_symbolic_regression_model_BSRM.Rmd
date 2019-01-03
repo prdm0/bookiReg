@@ -167,6 +167,42 @@ where
 Expression \@ref(eq:leastsquares) has the same form of the estimating equations for the GLMs. In general terms, we regress the modified dependent  variable $\mathbf z^{(k)}$ on the local model matrix $\pmb X$ by taking $\pmb W^{(k)}$ as a modified weighted matrix. At $k = 1$, an initial appro\-xi\-ma\-tion
 $\pmb \beta^{(1)}$ could be used to evaluate $\pmb W^{(1)}$ and $\pmb z^{(1)}$ from which equations (\ref{leastsquares}) yield the next estimate $\pmb \beta^{(2)}$. Hence, we update $\pmb W^{(2)}$ and $\pmb z^{(2)}$, and so the iterations continue until the convergence is achieved and then the conditional MLE $\hat{\pmb \beta}$, is obtained. In general, the convergence speed is fast, but it strongly depends on the choice of the initial value $\pmb \beta^{(1)}$.
 
+## Goodness-of-fit measure {#goodness-of-fit}
+
+
+Conditioned on the parameter $\rho$, the discrepancy of a **BSRM** is defined by [@LimaNetoetal2011] as twice the difference between the maximum log-likelihood achievable and that achieved for the model under investigation. The discrepancy is known as the deviance of the current model and has the form of a genuine GLM deviance, since it is a function of the data only and of the MLEs $\hat{\mu}_{1i}$
+and $\hat{\mu}_{2i}$, for $i=1,\ldots,n$, which are calculated from the data. Hence, the deviance conditioned on $\rho$, say $D(\rho)$, can be written as
+
+\begin{eqnarray}
+D(\rho) &=& 2 \sum_{i=1}^{n}\{y_{1i}[q_{1}(y_{1i},\rho) - q_{1}(\hat{\mu}_{1i},\rho)] + y_{2i}[q_{2}(y_{2i},\rho) - q_{2}(\hat{\mu}_{2i},\rho)]\nonumber\\
+&+& [b(q_{1}(\hat{\mu}_{1i},\rho),q_{2}(\hat{\mu}_{2i},\rho),\rho) -
+b(q_{1}(y_{1i},\rho),q_{2}(y_{2i},\rho),\rho)]\}.
+(\#eq:deviance)
+\end{eqnarray}
+
+
+The direct maximum likelihood estimation of the dispersion parameter $\phi$ is a more difficult problem than the estimation of \boldmath$\beta$\unboldmath\, and that complexity depends entirely on the functional form of the function $c(y_1,y_2,\rho,\phi)$. For some \textbf{BSRMs}, the MLE of the
+dispersion parameter could be very complicated, the deviance can be used to obtain a consistent estimate
+of the dispersion parameter $\phi$ from the estimates \boldmath$\hat\beta$\unboldmath$_{1}$ and \boldmath$\hat\beta$\unboldmath$_{2}$  obtained from (\ref{leastsquares}), with dimensions $p_1 \times 1$ and $p_2 \times 1$, respectively. The deviance can be  approximated by a $\chi_{\nu}^2$ distribution with $\nu=2n-(p_1+p_2)$ degrees of freedom, which leads to a simple estimate of $\phi$ 
+
+\begin{eqnarray}
+\tilde{\phi} = \frac{D(\rho)}{2n - (p_{1} + p_{2})},
+(\#eq:phiestimate)
+\end{eqnarray}
+based on the fact that the deviance can be approximated by a chi-squared distribution.
+
+Substituting the estimates $\hat{\pmb \beta}_{1}$, $\hat{\pmb \beta}_{2}$ and $\tilde\phi$ in
+\@ref(eq:loglikelihood) yields the profile log-likelihood for the parameter $\rho$
+
+\begin{equation}
+l_p(\rho)= \phi^{-1}\sum_{i=1}^{n} \{y_{1i}\hat\theta_{1} +
+y_{2i}\hat\theta_{2}-b(\hat\theta_{1},\hat\theta_{2},\rho)\} + \sum_{i=1}^{n}
+c(y_{1i},y_{2i},\rho,\tilde\phi).
+(\#eq:profile)
+\end{equation}
+
+In the next step, the procedure calculates the profile log-likelihood $l_p(\rho)$ in \@ref(eq:profile) for a trial series of va\-lues of $\rho \in$ $[-1,1]$ and determines numerically the value of the estimate $\hat\rho$ that maximizes $l_p(\rho)$. Once the estimate $\hat\rho$ is obtained, it can be  substituted into the algorithm \@ref(eq:leastsquares) to produce the new conditional estimate $\hat{\pmb \beta}$, and then substituting in equation \@ref(eq:phiestimate) to obtain a new estimate $\tilde\phi$. The new values of $\hat{\pmb \beta}$, and $\tilde\phi$ can update $\hat\rho$, and so the iterations continue until convergence is observed. The joint iterative process for the parameter estimates of the **BSRM** is included in the **iRegression** package through the function `bivar`.
+
 ---
 
 # References {-}

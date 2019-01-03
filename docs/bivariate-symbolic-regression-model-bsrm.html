@@ -25,7 +25,7 @@
 <meta name="author" content="Eufrasio de A. Lima Neto and Pedro Rafael D. Marinho">
 
 
-<meta name="date" content="2019-01-02">
+<meta name="date" content="2019-01-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,6 +70,7 @@
 <li class="chapter" data-level="2.1" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#preliminaries"><i class="fa fa-check"></i><b>2.1</b> Preliminaries</a></li>
 <li class="chapter" data-level="2.2" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:model"><i class="fa fa-check"></i><b>2.2</b> The model</a></li>
 <li class="chapter" data-level="2.3" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:parest"><i class="fa fa-check"></i><b>2.3</b> Parameter estimation</a></li>
+<li class="chapter" data-level="2.4" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#goodness-of-fit"><i class="fa fa-check"></i><b>2.4</b> Goodness-of-fit measure</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -219,6 +220,34 @@ In matrix notation, the information matrices for <span class="math inline">\(\be
 \pmb z_{2}^{(k)}\end{array} \right].\]</span></p>
 <p>Expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:leastsquares">(2.5)</a> has the same form of the estimating equations for the GLMs. In general terms, we regress the modified dependent variable <span class="math inline">\(\mathbf z^{(k)}\)</span> on the local model matrix <span class="math inline">\(\pmb X\)</span> by taking <span class="math inline">\(\pmb W^{(k)}\)</span> as a modified weighted matrix. At <span class="math inline">\(k = 1\)</span>, an initial appro-xi-ma-tion
 <span class="math inline">\(\pmb \beta^{(1)}\)</span> could be used to evaluate <span class="math inline">\(\pmb W^{(1)}\)</span> and <span class="math inline">\(\pmb z^{(1)}\)</span> from which equations () yield the next estimate <span class="math inline">\(\pmb \beta^{(2)}\)</span>. Hence, we update <span class="math inline">\(\pmb W^{(2)}\)</span> and <span class="math inline">\(\pmb z^{(2)}\)</span>, and so the iterations continue until the convergence is achieved and then the conditional MLE <span class="math inline">\(\hat{\pmb \beta}\)</span>, is obtained. In general, the convergence speed is fast, but it strongly depends on the choice of the initial value <span class="math inline">\(\pmb \beta^{(1)}\)</span>.</p>
+</div>
+<div id="goodness-of-fit" class="section level2">
+<h2><span class="header-section-number">2.4</span> Goodness-of-fit measure</h2>
+<p>Conditioned on the parameter <span class="math inline">\(\rho\)</span>, the discrepancy of a <strong>BSRM</strong> is defined by <span class="citation">(Lima Neto, Cordeiro, and De Carvalho <a href="#ref-LimaNetoetal2011">2011</a>)</span> as twice the difference between the maximum log-likelihood achievable and that achieved for the model under investigation. The discrepancy is known as the deviance of the current model and has the form of a genuine GLM deviance, since it is a function of the data only and of the MLEs <span class="math inline">\(\hat{\mu}_{1i}\)</span>
+and <span class="math inline">\(\hat{\mu}_{2i}\)</span>, for <span class="math inline">\(i=1,\ldots,n\)</span>, which are calculated from the data. Hence, the deviance conditioned on <span class="math inline">\(\rho\)</span>, say <span class="math inline">\(D(\rho)\)</span>, can be written as</p>
+<p><span class="math display" id="eq:deviance">\[\begin{eqnarray}
+D(\rho) &amp;=&amp; 2 \sum_{i=1}^{n}\{y_{1i}[q_{1}(y_{1i},\rho) - q_{1}(\hat{\mu}_{1i},\rho)] + y_{2i}[q_{2}(y_{2i},\rho) - q_{2}(\hat{\mu}_{2i},\rho)]\nonumber\\
+&amp;+&amp; [b(q_{1}(\hat{\mu}_{1i},\rho),q_{2}(\hat{\mu}_{2i},\rho),\rho) -
+b(q_{1}(y_{1i},\rho),q_{2}(y_{2i},\rho),\rho)]\}.
+\tag{2.6}
+\end{eqnarray}\]</span></p>
+<p>The direct maximum likelihood estimation of the dispersion parameter <span class="math inline">\(\phi\)</span> is a more difficult problem than the estimation of <span class="math inline">\(\beta\)</span>, and that complexity depends entirely on the functional form of the function <span class="math inline">\(c(y_1,y_2,\rho,\phi)\)</span>. For some , the MLE of the
+dispersion parameter could be very complicated, the deviance can be used to obtain a consistent estimate
+of the dispersion parameter <span class="math inline">\(\phi\)</span> from the estimates <span class="math inline">\(\hat\beta\)</span><span class="math inline">\(_{1}\)</span> and <span class="math inline">\(\hat\beta\)</span><span class="math inline">\(_{2}\)</span> obtained from (), with dimensions <span class="math inline">\(p_1 \times 1\)</span> and <span class="math inline">\(p_2 \times 1\)</span>, respectively. The deviance can be approximated by a <span class="math inline">\(\chi_{\nu}^2\)</span> distribution with <span class="math inline">\(\nu=2n-(p_1+p_2)\)</span> degrees of freedom, which leads to a simple estimate of <span class="math inline">\(\phi\)</span></p>
+<p><span class="math display" id="eq:phiestimate">\[\begin{eqnarray}
+\tilde{\phi} = \frac{D(\rho)}{2n - (p_{1} + p_{2})},
+\tag{2.7}
+\end{eqnarray}\]</span>
+based on the fact that the deviance can be approximated by a chi-squared distribution.</p>
+<p>Substituting the estimates <span class="math inline">\(\hat{\pmb \beta}_{1}\)</span>, <span class="math inline">\(\hat{\pmb \beta}_{2}\)</span> and <span class="math inline">\(\tilde\phi\)</span> in
+<a href="bivariate-symbolic-regression-model-bsrm.html#eq:loglikelihood">(2.2)</a> yields the profile log-likelihood for the parameter <span class="math inline">\(\rho\)</span></p>
+<p><span class="math display" id="eq:profile">\[\begin{equation}
+l_p(\rho)= \phi^{-1}\sum_{i=1}^{n} \{y_{1i}\hat\theta_{1} +
+y_{2i}\hat\theta_{2}-b(\hat\theta_{1},\hat\theta_{2},\rho)\} + \sum_{i=1}^{n}
+c(y_{1i},y_{2i},\rho,\tilde\phi).
+\tag{2.8}
+\end{equation}\]</span></p>
+<p>In the next step, the procedure calculates the profile log-likelihood <span class="math inline">\(l_p(\rho)\)</span> in <a href="bivariate-symbolic-regression-model-bsrm.html#eq:profile">(2.8)</a> for a trial series of va-lues of <span class="math inline">\(\rho \in\)</span> <span class="math inline">\([-1,1]\)</span> and determines numerically the value of the estimate <span class="math inline">\(\hat\rho\)</span> that maximizes <span class="math inline">\(l_p(\rho)\)</span>. Once the estimate <span class="math inline">\(\hat\rho\)</span> is obtained, it can be substituted into the algorithm <a href="bivariate-symbolic-regression-model-bsrm.html#eq:leastsquares">(2.5)</a> to produce the new conditional estimate <span class="math inline">\(\hat{\pmb \beta}\)</span>, and then substituting in equation <a href="bivariate-symbolic-regression-model-bsrm.html#eq:phiestimate">(2.7)</a> to obtain a new estimate <span class="math inline">\(\tilde\phi\)</span>. The new values of <span class="math inline">\(\hat{\pmb \beta}\)</span>, and <span class="math inline">\(\tilde\phi\)</span> can update <span class="math inline">\(\hat\rho\)</span>, and so the iterations continue until convergence is observed. The joint iterative process for the parameter estimates of the <strong>BSRM</strong> is included in the <strong>iRegression</strong> package through the function <code>bivar</code>.</p>
 <hr />
 </div>
 </div>
