@@ -2,9 +2,13 @@ p {
   text-align: justify;
 }
 
-ul.summary li.active{
-    color: #fffff8;
-    background-color: #FFFF80;
+.book .book-summary ul.summary li a:hover, .book .book-summary ul.summary li.active > a {
+
+    color: #000000;
+    background: 0 0;
+    text-decoration: none;
+    background-color: #FFFF00;
+
 }
 
 p.caption {
