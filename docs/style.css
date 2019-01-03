@@ -2,6 +2,11 @@ p {
   text-align: justify;
 }
 
+ul.summary li.active{
+    color: #fffff8;
+    background-color: #FFFF80;
+}
+
 p.caption {
   color: #777;
   margin-top: 10px;
