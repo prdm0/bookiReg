@@ -25,7 +25,7 @@
 <meta name="author" content="Eufrasio de A. Lima Neto and Pedro Rafael D. Marinho">
 
 
-<meta name="date" content="2019-01-03">
+<meta name="date" content="2019-01-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="sec-introduction.html">
-<link rel="next" href="references.html">
+<link rel="next" href="the-package.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -71,7 +71,9 @@
 <li class="chapter" data-level="2.2" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:model"><i class="fa fa-check"></i><b>2.2</b> The model</a></li>
 <li class="chapter" data-level="2.3" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:parest"><i class="fa fa-check"></i><b>2.3</b> Parameter estimation</a></li>
 <li class="chapter" data-level="2.4" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#goodness-of-fit"><i class="fa fa-check"></i><b>2.4</b> Goodness-of-fit measure</a></li>
+<li class="chapter" data-level="2.5" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#measures"><i class="fa fa-check"></i><b>2.5</b> Residuals</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="the-package.html"><a href="the-package.html"><i class="fa fa-check"></i><b>3</b> The package</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -248,7 +250,54 @@ c(y_{1i},y_{2i},\rho,\tilde\phi).
 \tag{2.8}
 \end{equation}\]</span></p>
 <p>In the next step, the procedure calculates the profile log-likelihood <span class="math inline">\(l_p(\rho)\)</span> in <a href="bivariate-symbolic-regression-model-bsrm.html#eq:profile">(2.8)</a> for a trial series of va-lues of <span class="math inline">\(\rho \in\)</span> <span class="math inline">\([-1,1]\)</span> and determines numerically the value of the estimate <span class="math inline">\(\hat\rho\)</span> that maximizes <span class="math inline">\(l_p(\rho)\)</span>. Once the estimate <span class="math inline">\(\hat\rho\)</span> is obtained, it can be substituted into the algorithm <a href="bivariate-symbolic-regression-model-bsrm.html#eq:leastsquares">(2.5)</a> to produce the new conditional estimate <span class="math inline">\(\hat{\pmb \beta}\)</span>, and then substituting in equation <a href="bivariate-symbolic-regression-model-bsrm.html#eq:phiestimate">(2.7)</a> to obtain a new estimate <span class="math inline">\(\tilde\phi\)</span>. The new values of <span class="math inline">\(\hat{\pmb \beta}\)</span>, and <span class="math inline">\(\tilde\phi\)</span> can update <span class="math inline">\(\hat\rho\)</span>, and so the iterations continue until convergence is observed. The joint iterative process for the parameter estimates of the <strong>BSRM</strong> is included in the <strong>iRegression</strong> package through the function <code>bivar</code>.</p>
+</div>
+<div id="measures" class="section level2">
+<h2><span class="header-section-number">2.5</span> Residuals</h2>
+<p><span class="citation">(Lima Neto, Cordeiro, and De Carvalho <a href="#ref-LimaNetoetal2011">2011</a>)</span> present some residuals expressions that are useful to make inference about the response distribution, identify outliers, verify the link function adequacy, among others aspects. The <strong>BSRM</strong> allows an unique residual definition for an interval-valued data. Usually, the residuals are defined separately for each boundary of the interval.</p>
+<p>The projection matrix <strong>H</strong> takes the form</p>
+<p><span class="math display" id="eq:21h">\[\begin{eqnarray}
+\pmb H = \pmb W^{1/2} \pmb X (\pmb X^\top \pmb W \pmb X)^{-1} \pmb X^\top \pmb W^{1/2},
+\tag{2.9}
+\end{eqnarray}\]</span></p>
+<p>that is equivalent to replace <span class="math inline">\(\pmb X\)</span> by <span class="math inline">\(\pmb W^{1/2} \pmb X\)</span> which effectively allows for the change in variance with the mean. Here,</p>
+<p><span class="math display">\[\pmb H = \left[ \begin{array}{cc}
+\pmb H_{1} &amp; \pmb 0 \\
+\pmb 0 &amp; \pmb H_{2} \end{array} \right], \mbox{ } \pmb X =
+\left[ \begin{array}{cc}
+\pmb X_{1} &amp; \pmb 0 \\
+\pmb 0 &amp; \pmb X_{2} \end{array} \right]\,\, \mbox{and} \,\,\pmb
+W = \left[ \begin{array}{cc}
+\pmb W_{1} &amp; \pmb 0 \\
+\pmb 0 &amp; \pmb W_{2} \end{array}\right].\]</span></p>
+<p>The well-known measure of leverage is given by the diagonal elements of the projection matrix, with
+<span class="math inline">\(\sum_{i} h_{1_{ii}} = p_{1}\)</span> and <span class="math inline">\(\sum_{i} h_{2_{ii}} = p_{2}\)</span>. Hence, the interval-valued observations for the response variable <span class="math inline">\(Y\)</span> with high leverage are indicated by <span class="math inline">\(h_{i}\)</span> = (<span class="math inline">\(h_{1_{ii}}\)</span> + <span class="math inline">\(h_{2_{ii}}\)</span>)
+greater than <span class="math inline">\(2(p_1+p_2)/n\)</span>. An index plot of each <span class="math inline">\(h_{i}\)</span> versus <span class="math inline">\(i\)</span> with this lower limit could be an useful informal tool for looking at leverage.</p>
+<p>Some residual measures commonly used in the GLM theory can be easily extended to the <strong>BSRM</strong>. The residual related to the <span class="math inline">\(i\)</span>th vector of observations <span class="math inline">\((y_{1i}, y_{2i})\)</span> can be composed by two parts: the residual for the observation <span class="math inline">\(y_{1i}\)</span> and the residual for the observation <span class="math inline">\(y_{2i}\)</span>. The Pearson residual is given by</p>
+<p><span class="math display" id="eq:pearson">\[\begin{eqnarray}
+r^{P}_{1i} = \frac{y_{1i} -\hat{\mu}_{1i}}{\sqrt{\widehat{V}_{1i}}}\,\,\,\mbox{and}\,\,\,r^{P}_{2i}
+=\frac{y_{2i}-\hat{\mu}_{2i}}{\sqrt{\widehat{V}_{2i}}}.
+\tag{2.10}
+\end{eqnarray}\]</span></p>
+<p>The Studentized Pearson residual which has a constant variance when <span class="math inline">\(\phi \rightarrow 0\)</span> can be expressed as</p>
+<p><span class="math display" id="eq:studentized">\[\begin{eqnarray}
+r^{SP}_{1i}= \frac{y_{1i}-\hat{\mu}_{1i}}{\sqrt{V(\hat{\mu}_{1i})(1-\hat{h}_{1_{ii}})}}\,\,\,
+\mbox{and}\,\,\,r^{SP}_{2i}=\frac{y_{2i}-\hat{\mu}_{2i}}{\sqrt{V(\hat{\mu}_{2i})(1-\hat{h}_{2_{ii}})}}.
+\tag{2.11}
+\end{eqnarray}\]</span></p>
+<p>The deviance residual can be interpreted as a joint residual measure or a global residual measure for the vector of observations <span class="math inline">\((y_{1i}, y_{2i})\)</span>. The <em>i</em>th deviance residual is defined in terms of the square root of the contribution of the <em>i</em>th observation to the deviance <a href="bivariate-symbolic-regression-model-bsrm.html#eq:deviance">(2.6)</a>. Conditioned on <span class="math inline">\(\rho\)</span>, the deviance residual can be expressed as</p>
+<p><span class="math display" id="eq:devianceresidual">\[\begin{eqnarray} 
+r_{i}^{D} &amp;=&amp; \mbox{sign}[(y_{1i}-\hat{\mu}_{1i})+(y_{2i}-\hat{\mu}_{2i})] \sqrt{d_{i}},
+\tag{2.12}
+\end{eqnarray}\]</span></p>
+<p>where</p>
+<p><span class="math display" id="eq:deviance1">\[\begin{eqnarray} 
+d_{i} &amp;=&amp; 2\{y_{1i}[q_{1}(y_{1i},\rho)-q_{1}(\hat{\mu}_{1i},\rho)]+ y_{2i}[q_{2}(y_{2i},\rho) - q_{2}(\hat{\mu}_{2i},\rho)] \nonumber \\
+&amp;+&amp; b(q_{1}(\hat{\mu}_{1i},\rho),q_{2}(\hat{\mu}_{2i},\rho),\rho)-b(q_{1}(y_{1i},\rho),q_{2}(y_{2i},\rho),\rho)\}. \nonumber
+\tag{2.13}
+\end{eqnarray}\]</span></p>
+<p>Based on these residuals measures, the classical model checking techniques considered in the GLM theory can be straightforwardly extended for the <strong>BSRM</strong>.</p>
 <hr />
+
 </div>
 </div>
 <h3>References</h3>
@@ -263,7 +312,7 @@ c(y_{1i},y_{2i},\rho,\tilde\phi).
         </div>
       </div>
 <a href="sec-introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-package.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

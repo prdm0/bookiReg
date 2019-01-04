@@ -2,6 +2,7 @@ rmd_files: [
   "index.Rmd",
   "Introduction.Rmd",
   "bivariate_symbolic_regression_model_BSRM.Rmd",
+  "the_package.Rmd",
 ]
 
 output_dir: "docs"

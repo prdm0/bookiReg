@@ -203,6 +203,64 @@ c(y_{1i},y_{2i},\rho,\tilde\phi).
 
 In the next step, the procedure calculates the profile log-likelihood $l_p(\rho)$ in \@ref(eq:profile) for a trial series of va\-lues of $\rho \in$ $[-1,1]$ and determines numerically the value of the estimate $\hat\rho$ that maximizes $l_p(\rho)$. Once the estimate $\hat\rho$ is obtained, it can be  substituted into the algorithm \@ref(eq:leastsquares) to produce the new conditional estimate $\hat{\pmb \beta}$, and then substituting in equation \@ref(eq:phiestimate) to obtain a new estimate $\tilde\phi$. The new values of $\hat{\pmb \beta}$, and $\tilde\phi$ can update $\hat\rho$, and so the iterations continue until convergence is observed. The joint iterative process for the parameter estimates of the **BSRM** is included in the **iRegression** package through the function `bivar`.
 
----
+## Residuals {#measures}
 
-# References {-}
+[@LimaNetoetal2011] present some residuals expressions that are useful to make inference about the response distribution, identify outliers, verify the link function adequacy, among others aspects. The **BSRM** allows an unique residual definition for an interval-valued data. Usually, the residuals are defined separately for each boundary of the interval.
+
+The projection matrix **H** takes the form
+
+\begin{eqnarray}
+\pmb H = \pmb W^{1/2} \pmb X (\pmb X^\top \pmb W \pmb X)^{-1} \pmb X^\top \pmb W^{1/2},
+(\#eq:21h)
+\end{eqnarray}
+
+that is equivalent to replace $\pmb X$ by $\pmb W^{1/2} \pmb X$ which effectively allows for the change in variance with the mean. Here,
+
+\[\pmb H = \left[ \begin{array}{cc}
+\pmb H_{1} & \pmb 0 \\
+\pmb 0 & \pmb H_{2} \end{array} \right], \mbox{ } \pmb X =
+\left[ \begin{array}{cc}
+\pmb X_{1} & \pmb 0 \\
+\pmb 0 & \pmb X_{2} \end{array} \right]\,\, \mbox{and} \,\,\pmb
+W = \left[ \begin{array}{cc}
+\pmb W_{1} & \pmb 0 \\
+\pmb 0 & \pmb W_{2} \end{array}\right].\]
+
+The well-known measure of leverage is given by the diagonal elements of the projection matrix, with
+$\sum_{i} h_{1_{ii}} = p_{1}$ and $\sum_{i} h_{2_{ii}} = p_{2}$. Hence, the interval-valued observations for the response variable $Y$ with high leverage are indicated by $h_{i}$ = ($h_{1_{ii}}$ + $h_{2_{ii}}$)
+greater than $2(p_1+p_2)/n$. An index plot of each $h_{i}$ versus $i$ with this lower limit could be an useful informal tool for looking at leverage.
+
+Some residual measures commonly used in the GLM theory can be easily extended to the **BSRM**. The residual related to the $i$th vector of observations $(y_{1i}, y_{2i})$ can be composed by two parts: the residual for the observation $y_{1i}$ and the residual for the observation $y_{2i}$. The Pearson residual is given by
+
+\begin{eqnarray}
+r^{P}_{1i} = \frac{y_{1i} -\hat{\mu}_{1i}}{\sqrt{\widehat{V}_{1i}}}\,\,\,\mbox{and}\,\,\,r^{P}_{2i}
+=\frac{y_{2i}-\hat{\mu}_{2i}}{\sqrt{\widehat{V}_{2i}}}.
+(\#eq:pearson)
+\end{eqnarray}
+
+The Studentized Pearson residual which has a constant variance when $\phi \rightarrow 0$ can be expressed as
+
+\begin{eqnarray}
+r^{SP}_{1i}= \frac{y_{1i}-\hat{\mu}_{1i}}{\sqrt{V(\hat{\mu}_{1i})(1-\hat{h}_{1_{ii}})}}\,\,\,
+\mbox{and}\,\,\,r^{SP}_{2i}=\frac{y_{2i}-\hat{\mu}_{2i}}{\sqrt{V(\hat{\mu}_{2i})(1-\hat{h}_{2_{ii}})}}.
+(\#eq:studentized)
+\end{eqnarray}
+
+The deviance residual can be interpreted as a joint residual measure or a global residual  measure for the vector of observations $(y_{1i}, y_{2i})$. The *i*th deviance residual is defined in terms of the  square root of the contribution of the *i*th observation to the deviance \@ref(eq:deviance).  Conditioned on $\rho$, the deviance residual can be expressed as
+
+\begin{eqnarray} 
+r_{i}^{D} &=& \mbox{sign}[(y_{1i}-\hat{\mu}_{1i})+(y_{2i}-\hat{\mu}_{2i})] \sqrt{d_{i}},
+(\#eq:devianceresidual)
+\end{eqnarray}
+
+where
+
+\begin{eqnarray} 
+d_{i} &=& 2\{y_{1i}[q_{1}(y_{1i},\rho)-q_{1}(\hat{\mu}_{1i},\rho)]+ y_{2i}[q_{2}(y_{2i},\rho) - q_{2}(\hat{\mu}_{2i},\rho)] \nonumber \\
+&+& b(q_{1}(\hat{\mu}_{1i},\rho),q_{2}(\hat{\mu}_{2i},\rho),\rho)-b(q_{1}(y_{1i},\rho),q_{2}(y_{2i},\rho),\rho)\}. \nonumber
+(\#eq:deviance1)
+\end{eqnarray}
+
+Based on these residuals measures, the classical model checking techniques considered in the GLM theory can be straightforwardly extended for the **BSRM**.
+
+---
