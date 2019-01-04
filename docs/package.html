@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>3 The package | iRegression: An R Package for Regression Models with Interval Variables</title>
+  <meta name="description" content="Escrever um prefácio">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="3 The package | iRegression: An R Package for Regression Models with Interval Variables" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://prdm0.github.io/iRegression/" />
+  
+  <meta property="og:description" content="Escrever um prefácio" />
+  <meta name="github-repo" content="prdm0/bookiRegression" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 The package | iRegression: An R Package for Regression Models with Interval Variables" />
+  
+  <meta name="twitter:description" content="Escrever um prefácio" />
+  
+
+<meta name="author" content="Eufrasio de A. Lima Neto and Pedro Rafael D. Marinho">
+
+
+<meta name="date" content="2019-01-04">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="bivariate-symbolic-regression-model-bsrm.html">
+<link rel="next" href="references.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="sec-introduction.html"><a href="sec-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html"><i class="fa fa-check"></i><b>2</b> Bivariate symbolic regression model (BSRM)</a><ul>
+<li class="chapter" data-level="2.1" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#preliminaries"><i class="fa fa-check"></i><b>2.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="2.2" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:model"><i class="fa fa-check"></i><b>2.2</b> The model</a></li>
+<li class="chapter" data-level="2.3" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#subsec:parest"><i class="fa fa-check"></i><b>2.3</b> Parameter estimation</a></li>
+<li class="chapter" data-level="2.4" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#goodness-of-fit"><i class="fa fa-check"></i><b>2.4</b> Goodness-of-fit measure</a></li>
+<li class="chapter" data-level="2.5" data-path="bivariate-symbolic-regression-model-bsrm.html"><a href="bivariate-symbolic-regression-model-bsrm.html#measures"><i class="fa fa-check"></i><b>2.5</b> Residuals</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>3</b> The package</a><ul>
+<li class="chapter" data-level="3.1" data-path="package.html"><a href="package.html#function-bivar"><i class="fa fa-check"></i><b>3.1</b> Function bivar</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">iRegression: An R Package for Regression Models with Interval Variables</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="package" class="section level1">
+<h1><span class="header-section-number">3</span> The package</h1>
+<p>The <strong>R</strong> package <strong>iRegression</strong> contains the following functions: </br></br></p>
+<ul>
+<li><code>bivar</code> is a function that fits a regression model for interval-valued variables based on the bivariate symbolic regression method (BSRM);</br></br></li>
+<li><code>crm</code> is a function that fits a linear regression model based on the center and range method (CRM);</br></br></li>
+<li><code>ccrm</code> is function that fits a linear regression with inequality constraints over the range’s parameters (CCRM);</br></br></li>
+<li><code>MinMax</code> is a function that fits a linear regression model for interval variables based on the MinMax method;</br></br></li>
+<li><code>cm</code> is a function that fits a linear regression model based on the center method;</li>
+</ul>
+<p>All five functions require an object of class <code>formula</code> giving the symbolic description of the regression model to be estimated. Methods for analyzing the models above are also provided. The functions <code>coef()</code>, <code>fitted()</code> and <code>residuals()</code> extract the estimated coefficients, fitted values and residuals from the adjusted models. An object from any of the five classes can be summarized through the function <code>summary()</code>.</p>
+<div id="function-bivar" class="section level2">
+<h2><span class="header-section-number">3.1</span> Function bivar</h2>
+<p>The function <code>bivar()</code> can be used to estimate the parameter of a gaussian bivariate regression model for interval variables. It is possible to consider any pair of interval features for the bivariate random vector <span class="math inline">\(\pmb Y\)</span>. For example, the lower and upper interval bounds or the midpoint and the range of intervals, respectively. The function is used as </br></br></p>
+<p><code>bivar(formula1, lig1, formula2, lig2, data, ...)</code> </br></br></p>
+<p>and considers the following arguments: </br></br></p>
+<ul>
+<li><code>formula1</code>: an object of class <code>formula</code> that represents the symbolic description of the first marginal model;</br></br></li>
+<li><code>lig1</code>: represents the link function to be considered for the first model;</br></br></li>
+<li><code>formula2</code>: an object of class <code>formula</code> that represents the symbolic description of the second marginal model;</br></br></li>
+<li><code>lig2</code>: represents the link function to be considered for the second model;</br></br></li>
+<li><code>data</code>: an optional data frame containing the variables of the models.</li>
+</ul>
+<p>Notice that it is possible to choose from different link functions (<code>identity</code>, <code>inverse</code> or <code>log</code>) to connect the random variables <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> with the respective linear predictors <span class="math inline">\(\eta_1\)</span> and <span class="math inline">\(\eta_2\)</span>. The function <code>summary.bivar()</code> returns the following elements, given an object of the class <code>bivar</code>: </br></br></p>
+<ul>
+<li><code>Coefficients1</code> and <code>Coefficients2</code>: the vectors of coefficients for the explanatory variables of the models 1 and 2, respectively;</br></br></li>
+<li><code>RMSE1</code> and <code>RMSE2</code>: the root mean square error for the models 1 and 2, respectively;</br></br></li>
+<li><code>Rho</code>: the estimate for the correlation coefficient between <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span>;</br></br></li>
+<li><code>Phi</code>: the estimate of the dispersion parameter;</br></br></li>
+<li><code>D</code>: the goodness-of-fit measure deviance for the current model.</li>
+</ul>
+<p>The function <code>bivar()</code> considers the expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:leastsquares">(2.5)</a> to estimate the vectors of coefficients <span class="math inline">\(\hat{\pmb \beta_1}\)</span> and <span class="math inline">\(\hat{\pmb \beta_2}\)</span>, the expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:deviance">(2.6)</a> to compute the Deviance for the current model, and the expressions <a href="bivariate-symbolic-regression-model-bsrm.html#eq:phiestimate">(2.7)</a> and <a href="bivariate-symbolic-regression-model-bsrm.html#eq:profile">(2.8)</a> provide, respectively, the estimates of the dispersion parameter <span class="math inline">\(\hat{\phi}\)</span> and the correlation coefficient <span class="math inline">\(\hat{\rho}\)</span>. Moreover, the function <code>coef.bivar()</code> returns just the estimated coefficients while the functions <code>fitted.bivar()</code> and <code>residuals.bivar()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>bivar</code>. The expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:devianceresidual">(2.12)</a> is used to obtain the residual deviance. The function <code>bivar</code> considers the bivariate gaussian distribution as probabilistic support for the error of the model BSRM and the following elements belongs from an object of class <code>bivar</code>: </br></br></p>
+<ul>
+<li><code>coefficients1</code>: a named vector of coefficients for the explanatory variables of the model “1”;</br></br></li>
+<li><code>coefficients2</code>: a named vector of coefficients for the explanatory variables of the model “2”;</br></br></li>
+<li><code>fitted.values1</code>: the fitted values for the response variable <span class="math inline">\(\pmb Y_1\)</span>;</br></br></li>
+<li><code>fitted.values2</code>: the fitted values for the response variable <span class="math inline">\(\pmb Y_2\)</span>;</br></br></li>
+<li><code>residuals1</code>: the ordinary residual for the response variable <span class="math inline">\(\pmb Y_1\)</span>;</br></br></li>
+<li><code>residuals2</code>: the ordinary residual for the response variable <span class="math inline">\(\pmb Y_2\)</span>;</br></br></li>
+<li><code>residual.deviance</code>: the global residual for the bivariate vector <span class="math inline">\(\pmb Y = [\pmb Y_1, \pmb Y_2]\)</span>;</br></br></li>
+<li><code>Rho</code>: the estimative for the correlation coefficient between <span class="math inline">\(\pmb Y_1\)</span> and <span class="math inline">\(\pmb Y_2\)</span>;</br></br></li>
+<li><code>Phi</code>:the estimative of the dispersion parameter;</br></br></li>
+<li><code>D</code>: the goodness-of-fit measure deviance for the current model.</li>
+</ul>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bivariate-symbolic-regression-model-bsrm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/prdm0/bookiReg/edit/master/the_package.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

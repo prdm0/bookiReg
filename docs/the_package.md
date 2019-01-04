@@ -1,4 +1,4 @@
-# The package
+# The package {#package}
 
 The **R** package **iRegression** contains the following functions: </br></br>
 
