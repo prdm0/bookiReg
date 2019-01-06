@@ -48,4 +48,15 @@ The function `bivar()` considers the expression \@ref(eq:leastsquares) to estima
 - `Phi`:the estimative of the dispersion parameter;</br></br>
 - `D`:	the goodness-of-fit measure deviance for the current model.
 
+## Function crm {#sec:crm}
+
+The function `crm()` fits two independent linear regression models to the center and range
+of the interval variables, respectively, and minimizes the sum of squared center's error plus the sum of squared range's error [@LimaNetoDeCarvalho2008]. The function is used as </br></br>
+
+
+`crm(formula1, formula2, data, ...)` </br></br>
+
+
+and considers the following arguments: </br></br>
+
 # References {-}
