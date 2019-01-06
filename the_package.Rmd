@@ -59,4 +59,26 @@ of the interval variables, respectively, and minimizes the sum of squared center
 
 and considers the following arguments: </br></br>
 
+- `formula1`: an object of class `formula` that represents the symbolic description of the center's model;</br></br>
+- `formula2`: an object of class `formula` that represents the symbolic description of the range's model;</br></br>
+- `data`: an optional data frame containing the variables of the models.
+
+This function returns an object of class `crm` including the following elements: </br></br>
+
+
+- `coefficients.C`: the vector of coefficients for the center's explanatory variables;</br></br>
+- `coefficients.R`: the vector of coefficients for the range's explantory variables;</br></br>
+- `sigma.C`:  an estimate of standard deviation for the center's regression model;</br></br>
+- `sigma.R`: an estimate of standard deviation for the range's regression model;</br></br>
+- `df.C`: the degrees of freedom for the center's residuals;</br></br>
+- `df.R`: the degrees of freedom for the range's residuals;</br></br>
+- `fitted.values.l`: the fitted values of the lower interval bounds;</br></br>
+- `fitted.values.u`: the fitted values of the upper interval bounds;</br></br>
+- `residuals.l`: the residuals of the lower interval bounds;</br></br>
+- `residuals.u`: the residuals of the upper interval bounds.
+
+The function `summary.crm()` returns the elements `RMSE.l` (the root mean squared error of the lower bound) and `RMSE.u` (the root mean squared error of the upper bound), given an object of the class `crm`. The function `coef.crm()` returns just the estimated coefficients while the functions `fitted.crm()` and `residuals.crm()` provide, respectively, the matrices of the fitted values and the residuals for an object of the class `crm`. Notice that the fitted values, residuals and root mean square errors are denoted in terms of lower and upper interval bounds to a better comparison with the original values of the response variable $\pmb Y$.
+
+## Function ccrm {#sec:ccrm}
+
 # References {-}

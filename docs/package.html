@@ -25,7 +25,7 @@
 <meta name="author" content="Eufrasio de A. Lima Neto and Pedro Rafael D. Marinho">
 
 
-<meta name="date" content="2019-01-05">
+<meta name="date" content="2019-01-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -76,6 +76,7 @@
 <li class="chapter" data-level="3" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>3</b> The package</a><ul>
 <li class="chapter" data-level="3.1" data-path="package.html"><a href="package.html#function-bivar"><i class="fa fa-check"></i><b>3.1</b> Function bivar</a></li>
 <li class="chapter" data-level="3.2" data-path="package.html"><a href="package.html#sec:crm"><i class="fa fa-check"></i><b>3.2</b> Function crm</a></li>
+<li class="chapter" data-level="3.3" data-path="package.html"><a href="package.html#sec:ccrm"><i class="fa fa-check"></i><b>3.3</b> Function ccrm</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -146,6 +147,28 @@
 of the interval variables, respectively, and minimizes the sum of squared center’s error plus the sum of squared range’s error <span class="citation">(Lima Neto and De Carvalho <a href="#ref-LimaNetoDeCarvalho2008">2008</a>)</span>. The function is used as </br></br></p>
 <p><code>crm(formula1, formula2, data, ...)</code> </br></br></p>
 <p>and considers the following arguments: </br></br></p>
+<ul>
+<li><code>formula1</code>: an object of class <code>formula</code> that represents the symbolic description of the center’s model;</br></br></li>
+<li><code>formula2</code>: an object of class <code>formula</code> that represents the symbolic description of the range’s model;</br></br></li>
+<li><code>data</code>: an optional data frame containing the variables of the models.</li>
+</ul>
+<p>This function returns an object of class <code>crm</code> including the following elements: </br></br></p>
+<ul>
+<li><code>coefficients.C</code>: the vector of coefficients for the center’s explanatory variables;</br></br></li>
+<li><code>coefficients.R</code>: the vector of coefficients for the range’s explantory variables;</br></br></li>
+<li><code>sigma.C</code>: an estimate of standard deviation for the center’s regression model;</br></br></li>
+<li><code>sigma.R</code>: an estimate of standard deviation for the range’s regression model;</br></br></li>
+<li><code>df.C</code>: the degrees of freedom for the center’s residuals;</br></br></li>
+<li><code>df.R</code>: the degrees of freedom for the range’s residuals;</br></br></li>
+<li><code>fitted.values.l</code>: the fitted values of the lower interval bounds;</br></br></li>
+<li><code>fitted.values.u</code>: the fitted values of the upper interval bounds;</br></br></li>
+<li><code>residuals.l</code>: the residuals of the lower interval bounds;</br></br></li>
+<li><code>residuals.u</code>: the residuals of the upper interval bounds.</li>
+</ul>
+<p>The function <code>summary.crm()</code> returns the elements <code>RMSE.l</code> (the root mean squared error of the lower bound) and <code>RMSE.u</code> (the root mean squared error of the upper bound), given an object of the class <code>crm</code>. The function <code>coef.crm()</code> returns just the estimated coefficients while the functions <code>fitted.crm()</code> and <code>residuals.crm()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>crm</code>. Notice that the fitted values, residuals and root mean square errors are denoted in terms of lower and upper interval bounds to a better comparison with the original values of the response variable <span class="math inline">\(\pmb Y\)</span>.</p>
+</div>
+<div id="sec:ccrm" class="section level2">
+<h2><span class="header-section-number">3.3</span> Function ccrm</h2>
 </div>
 </div>
 <h3>References</h3>
