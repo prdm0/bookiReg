@@ -78,6 +78,7 @@
 <li class="chapter" data-level="3.2" data-path="package.html"><a href="package.html#sec:crm"><i class="fa fa-check"></i><b>3.2</b> Function crm</a></li>
 <li class="chapter" data-level="3.3" data-path="package.html"><a href="package.html#sec:ccrm"><i class="fa fa-check"></i><b>3.3</b> Function ccrm</a></li>
 <li class="chapter" data-level="3.4" data-path="package.html"><a href="package.html#sec:MinMax"><i class="fa fa-check"></i><b>3.4</b> Function MinMax</a></li>
+<li class="chapter" data-level="3.5" data-path="package.html"><a href="package.html#sec:cm"><i class="fa fa-check"></i><b>3.5</b> Function cm</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -192,11 +193,28 @@ of the interval variables. However, the parameter estimation of the range’s co
 </ul>
 <p>The following elements belong to an object of class <code>MinMax</code>: <code>coefficients.l</code>, <code>coefficients.u</code>, <code>sigma.l</code>, <code>sigma.u</code>, <code>df.l</code>, <code>df.u</code>, <code>fitted.values.l</code>, <code>fitted.values.u</code>, <code>residuals.l</code> and <code>residuals.u</code>. The function <code>summary.MinMax()</code> returns the elements <code>RMSE.l</code> (the root mean squared error of the lower bound) and <code>RMSE.u</code> (the root mean squared error of the upper bound), given an object of the class <code>MinMax</code>. The function <code>coef.MinMax()</code> returns just the estimated coefficients while the functions <code>fitted.MinMax()</code> and <code>residuals.MinMax()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>MinMax</code>.</p>
 </div>
+<div id="sec:cm" class="section level2">
+<h2><span class="header-section-number">3.5</span> Function cm</h2>
+<p>The function <code>cm()</code> implements the first approach proposed to fit a linear regression model to interval variables <span class="citation">(Billard and Diday <a href="#ref-BillardDiday2000">2000</a>)</span>. This approach consists in fitting a linear regression model
+to the centers of the interval variables, minimizing the sum of squared center’s error. The lower and upper bounds of the response interval variable Y are predicted, respectively, from the
+lower and upper bounds of the independent variables using the same vector of parameters <span class="math inline">\(\pmb{\beta}\)</span>. The function is used as </br></br></p>
+<p><code>cm(formula1, formula2, data, ...)</code> </br></br></p>
+<p>and considers the following arguments: </br></br></p>
+<ul>
+<li><code>formula1</code>: an object of class <code>formula</code> that represents the symbolic description of the lower bound model;</br></br></li>
+<li><code>formula2</code>: an object of class <code>formula</code> that represents the symbolic description of the upper bound model;</br></br></li>
+<li><code>data</code>: an optional data frame containing the variables of the models.</li>
+</ul>
+<p>The function <code>cm</code> returns an object of class <code>cm</code> including the following elements: <code>coefficients</code>, <code>sigma</code>, <code>df</code>, <code>fitted.values.l</code>, <code>fitted.values.u</code>, <code>residuals.l</code> and <code>residuals.u</code>. The function <code>summary.cm()</code> returns the elements <code>RMSE.l</code> (the root mean squared error of the lower bound) and <code>RMSE.u</code> (the root mean squared error of the upper bound), given an object of the class <code>cm</code>. The function <code>coef()</code> returns just the estimated coefficients while the functions <code>fitted.cm()</code> and <code>residuals.cm()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>cm</code>.</p>
+</div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-LimaNetoDeCarvalho2008">
 <p>Lima Neto, Eufrásio Andrade, and Francisco Assis T. De Carvalho. 2008. “Centre and Range Method for Fitting a Linear Regression Model to Symbolic Interval Data.” <em>Computational Statistics &amp; Data Analysis</em> 52 (3): 1500–1515. <a href="https://doi.org/http://dx.doi.org/10.1016/j.csda.2007.04.014">https://doi.org/http://dx.doi.org/10.1016/j.csda.2007.04.014</a>.</p>
+</div>
+<div id="ref-BillardDiday2000">
+<p>Billard, L., and E. Diday. 2000. “Regression Analysis for Interval-Valued Data.” In <em>Data Analysis, Classification, and Related Methods</em>, edited by Henk A. L. Kiers, Jean-Paul Rasson, Patrick J. F. Groenen, and Martin Schader, 369–74. Heidelberg: Springer. <a href="https://doi.org/10.1007/978-3-642-59789-3_58">https://doi.org/10.1007/978-3-642-59789-3_58</a>.</p>
 </div>
 </div>
             </section>

@@ -107,4 +107,21 @@ The function `MinMax()` suggests to estimate the lower and the upper bounds of t
 
 The following elements belong to an object of class `MinMax`: `coefficients.l`, `coefficients.u`, `sigma.l`, `sigma.u`, `df.l`, `df.u`, `fitted.values.l`, `fitted.values.u`, `residuals.l` and `residuals.u`. The function `summary.MinMax()` returns the elements `RMSE.l` (the root mean squared error of the lower bound) and `RMSE.u` (the root mean squared error of the upper bound), given an object of the class `MinMax`. The function `coef.MinMax()` returns just the estimated coefficients while the functions `fitted.MinMax()` and `residuals.MinMax()` provide, respectively, the matrices of the fitted values and the residuals for an object of the class `MinMax`.
 
+## Function cm {#sec:cm}
+
+The function `cm()` implements the first approach proposed to fit a linear regression model to interval variables [@BillardDiday2000]. This approach consists in fitting a linear regression model
+to the centers of the interval variables, minimizing the sum of squared center's error. The lower and upper bounds of the response interval variable Y are predicted, respectively, from the
+lower and upper bounds of the independent variables using the same vector of parameters $\pmb{\beta}$. The function is used as </br></br>
+
+
+`cm(formula1, formula2, data, ...)` </br></br>
+
+and considers the following arguments: </br></br>
+
+- `formula1`: an object of class `formula` that represents the symbolic description of the lower bound model;</br></br>
+- `formula2`: an object of class `formula` that represents the symbolic description of the upper bound model;</br></br>
+- `data`: an optional data frame containing the variables of the models.
+
+The function `cm` returns an object of class `cm` including the following elements: `coefficients`, `sigma`, `df`, `fitted.values.l`, `fitted.values.u`, `residuals.l` and `residuals.u`. The function `summary.cm()` returns the elements `RMSE.l` (the root mean squared error of the lower bound) and `RMSE.u`  (the root mean squared error of the upper bound), given an object of the class `cm`. The function `coef()` returns just the estimated coefficients while the functions `fitted.cm()` and `residuals.cm()` provide, respectively, the matrices of the fitted values and the residuals for an object of the class `cm`.
+
 # References {-}
