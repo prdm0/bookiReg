@@ -95,5 +95,16 @@ and considers the following arguments: </br></br>
 
 This function returns an object of class `ccrm` with the following elements: `coefficients.C`, `coefficients.R`, `sigma.C`, `sigma.R`, `df.C`, `df.R`, `fitted.values.l`, `fitted.values.u`,  `residuals.l` and `residuals.u`. All these elements present the same description of the function `crm()`. The function `summary.ccrm()` returns the elements `RMSE.l` (the root mean squared error of the lower bound) and `RMSE.u` (the root mean squared error of the upper bound), given an object of the class `ccrm`. The function `coef.ccrm()` returns just the estimated coefficients while the functions `fitted.ccrm()` and `residuals.ccrm()` provide, respectively, the matrices of the fitted values and the residuals for an object of the class `ccrm`. 
 
+## Function MinMax {#sec:MinMax}
+
+The function `MinMax()` suggests to estimate the lower and the upper bounds of the interval variables using two linear regression models with different vectors of parameters. This is equivalent to supposing independence between the values of lower and upper bounds of the intervals. The function is used as </br></br>
+
+`MinMax(formula1, formula2, data, ...)` </br></br>
+
+- `formula1`: an object of class `formula` that represents the symbolic description of the lower bound model; </br></br>
+- `formula2`: an object of class `formula` that represents the symbolic description of the upper bound model; </br></br>
+- `data`: an optional data frame containing the variables of the models.
+
+The following elements belong to an object of class `MinMax`: `coefficients.l`, `coefficients.u`, `sigma.l`, `sigma.u`, `df.l`, `df.u`, `fitted.values.l`, `fitted.values.u`, `residuals.l` and `residuals.u`. The function `summary.MinMax()` returns the elements `RMSE.l` (the root mean squared error of the lower bound) and `RMSE.u` (the root mean squared error of the upper bound), given an object of the class `MinMax`. The function `coef.MinMax()` returns just the estimated coefficients while the functions `fitted.MinMax()` and `residuals.MinMax()` provide, respectively, the matrices of the fitted values and the residuals for an object of the class `MinMax`.
 
 # References {-}

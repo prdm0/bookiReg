@@ -77,6 +77,7 @@
 <li class="chapter" data-level="3.1" data-path="package.html"><a href="package.html#function-bivar"><i class="fa fa-check"></i><b>3.1</b> Function bivar</a></li>
 <li class="chapter" data-level="3.2" data-path="package.html"><a href="package.html#sec:crm"><i class="fa fa-check"></i><b>3.2</b> Function crm</a></li>
 <li class="chapter" data-level="3.3" data-path="package.html"><a href="package.html#sec:ccrm"><i class="fa fa-check"></i><b>3.3</b> Function ccrm</a></li>
+<li class="chapter" data-level="3.4" data-path="package.html"><a href="package.html#sec:MinMax"><i class="fa fa-check"></i><b>3.4</b> Function MinMax</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -179,6 +180,17 @@ of the interval variables. However, the parameter estimation of the range’s co
 <li><code>data</code>: an optional data frame containing the variables of the models.</li>
 </ul>
 <p>This function returns an object of class <code>ccrm</code> with the following elements: <code>coefficients.C</code>, <code>coefficients.R</code>, <code>sigma.C</code>, <code>sigma.R</code>, <code>df.C</code>, <code>df.R</code>, <code>fitted.values.l</code>, <code>fitted.values.u</code>, <code>residuals.l</code> and <code>residuals.u</code>. All these elements present the same description of the function <code>crm()</code>. The function <code>summary.ccrm()</code> returns the elements <code>RMSE.l</code> (the root mean squared error of the lower bound) and <code>RMSE.u</code> (the root mean squared error of the upper bound), given an object of the class <code>ccrm</code>. The function <code>coef.ccrm()</code> returns just the estimated coefficients while the functions <code>fitted.ccrm()</code> and <code>residuals.ccrm()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>ccrm</code>.</p>
+</div>
+<div id="sec:MinMax" class="section level2">
+<h2><span class="header-section-number">3.4</span> Function MinMax</h2>
+<p>The function <code>MinMax()</code> suggests to estimate the lower and the upper bounds of the interval variables using two linear regression models with different vectors of parameters. This is equivalent to supposing independence between the values of lower and upper bounds of the intervals. The function is used as </br></br></p>
+<p><code>MinMax(formula1, formula2, data, ...)</code> </br></br></p>
+<ul>
+<li><code>formula1</code>: an object of class <code>formula</code> that represents the symbolic description of the lower bound model; </br></br></li>
+<li><code>formula2</code>: an object of class <code>formula</code> that represents the symbolic description of the upper bound model; </br></br></li>
+<li><code>data</code>: an optional data frame containing the variables of the models.</li>
+</ul>
+<p>The following elements belong to an object of class <code>MinMax</code>: <code>coefficients.l</code>, <code>coefficients.u</code>, <code>sigma.l</code>, <code>sigma.u</code>, <code>df.l</code>, <code>df.u</code>, <code>fitted.values.l</code>, <code>fitted.values.u</code>, <code>residuals.l</code> and <code>residuals.u</code>. The function <code>summary.MinMax()</code> returns the elements <code>RMSE.l</code> (the root mean squared error of the lower bound) and <code>RMSE.u</code> (the root mean squared error of the upper bound), given an object of the class <code>MinMax</code>. The function <code>coef.MinMax()</code> returns just the estimated coefficients while the functions <code>fitted.MinMax()</code> and <code>residuals.MinMax()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>MinMax</code>.</p>
 </div>
 </div>
 <h3>References</h3>
