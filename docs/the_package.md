@@ -81,4 +81,19 @@ The function `summary.crm()` returns the elements `RMSE.l` (the root mean square
 
 ## Function ccrm {#sec:ccrm}
 
+The function `ccrm()` fits two independent linear regression models to the center and range
+of the interval variables. However, the parameter estimation of the range's coefficients takes into account inequality constraints and is estimated using the function `pcls()` (see package **mgcv**, available in [mgcv](http://CRAN.r-project.org/package=mgcv)). This function solves least squares problems with quadratic penalties subject to linear equality and inequality constraints using quadratic programming. The aim is to guarantee mathematical coherence between the predicted values of the lower and upper bounds of the response interval variable Y, i.e., $\hat{y}_L < \hat{y}_U$. There are no constraints over the parameter estimates for the center coefficients. For further details about the constrained center and range method, see \cite{LimaNetoDeCarvalho2010}. The function \code{ccrm()} is used as
+
+
+`ccrm(formula1, formula2, data, ...)`</br></br>
+
+and considers the following arguments: </br></br>
+
+- `formula1`: an object of class `formula` that represents the symbolic description of the center's model;</br></br>
+- `formula2`: an object of class `formula` that represents the symbolic description of the range's model;</br></br>
+- `data`: an optional data frame containing the variables of the models.
+
+This function returns an object of class `ccrm` with the following elements: `coefficients.C`, `coefficients.R`, `sigma.C`, `sigma.R`, `df.C`, `df.R`, `fitted.values.l`, `fitted.values.u`,  `residuals.l` and `residuals.u`. All these elements present the same description of the function `crm()`. The function `summary.ccrm()` returns the elements `RMSE.l` (the root mean squared error of the lower bound) and `RMSE.u` (the root mean squared error of the upper bound), given an object of the class `ccrm`. The function `coef.ccrm()` returns just the estimated coefficients while the functions `fitted.ccrm()` and `residuals.ccrm()` provide, respectively, the matrices of the fitted values and the residuals for an object of the class `ccrm`. 
+
+
 # References {-}
