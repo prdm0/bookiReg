@@ -124,4 +124,8 @@ and considers the following arguments: </br></br>
 
 The function `cm` returns an object of class `cm` including the following elements: `coefficients`, `sigma`, `df`, `fitted.values.l`, `fitted.values.u`, `residuals.l` and `residuals.u`. The function `summary.cm()` returns the elements `RMSE.l` (the root mean squared error of the lower bound) and `RMSE.u`  (the root mean squared error of the upper bound), given an object of the class `cm`. The function `coef()` returns just the estimated coefficients while the functions `fitted.cm()` and `residuals.cm()` provide, respectively, the matrices of the fitted values and the residuals for an object of the class `cm`.
 
+## An example {#sec:an_example}
+
+This section illustrates the functions in the package and demonstrates the differences between the regression methods implemented for interval variables. This is performed using the data set Soccer, illustrated in
+
 # References {-}
