@@ -25,7 +25,7 @@
 <meta name="author" content="Eufrasio de A. Lima Neto and Pedro Rafael D. Marinho">
 
 
-<meta name="date" content="2019-01-24">
+<meta name="date" content="2019-01-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -130,7 +130,7 @@
 <li><code>Phi</code>: the estimate of the dispersion parameter;</br></br></li>
 <li><code>D</code>: the goodness-of-fit measure deviance for the current model.</li>
 </ul>
-<p>The function <code>bivar()</code> considers the expression <a href="#eq:leastsquares">(<strong>??</strong>)</a> to estimate the vectors of coefficients <span class="math inline">\(\hat{\pmb \beta_1}\)</span> and <span class="math inline">\(\hat{\pmb \beta_2}\)</span>, the expression <a href="#eq:deviance">(<strong>??</strong>)</a> to compute the Deviance for the current model, and the expressions <a href="#eq:phiestimate">(<strong>??</strong>)</a> and <a href="#eq:profile">(<strong>??</strong>)</a> provide, respectively, the estimates of the dispersion parameter <span class="math inline">\(\hat{\phi}\)</span> and the correlation coefficient <span class="math inline">\(\hat{\rho}\)</span>. Moreover, the function <code>coef.bivar()</code> returns just the estimated coefficients while the functions <code>fitted.bivar()</code> and <code>residuals.bivar()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>bivar</code>. The expression <a href="#eq:devianceresidual">(<strong>??</strong>)</a> is used to obtain the residual deviance. The function <code>bivar</code> considers the bivariate gaussian distribution as probabilistic support for the error of the model BSRM and the following elements belongs from an object of class <code>bivar</code>: </br></br></p>
+<p>The function <code>bivar()</code> considers the expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:leastsquares">(2.5)</a> to estimate the vectors of coefficients <span class="math inline">\(\hat{\pmb \beta_1}\)</span> and <span class="math inline">\(\hat{\pmb \beta_2}\)</span>, the expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:deviance">(2.6)</a> to compute the Deviance for the current model, and the expressions <a href="bivariate-symbolic-regression-model-bsrm.html#eq:phiestimate">(2.7)</a> and <a href="bivariate-symbolic-regression-model-bsrm.html#eq:profile">(2.8)</a> provide, respectively, the estimates of the dispersion parameter <span class="math inline">\(\hat{\phi}\)</span> and the correlation coefficient <span class="math inline">\(\hat{\rho}\)</span>. Moreover, the function <code>coef.bivar()</code> returns just the estimated coefficients while the functions <code>fitted.bivar()</code> and <code>residuals.bivar()</code> provide, respectively, the matrices of the fitted values and the residuals for an object of the class <code>bivar</code>. The expression <a href="bivariate-symbolic-regression-model-bsrm.html#eq:devianceresidual">(2.12)</a> is used to obtain the residual deviance. The function <code>bivar</code> considers the bivariate gaussian distribution as probabilistic support for the error of the model BSRM and the following elements belongs from an object of class <code>bivar</code>: </br></br></p>
 <ul>
 <li><code>coefficients1</code>: a named vector of coefficients for the explanatory variables of the model “1”;</br></br></li>
 <li><code>coefficients2</code>: a named vector of coefficients for the explanatory variables of the model “2”;</br></br></li>
